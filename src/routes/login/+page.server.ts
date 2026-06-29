@@ -1,13 +1,15 @@
 import { fail, redirect } from '@sveltejs/kit';
-import type { Actions } from './$types';
-import type { PageServerLoad } from './$types';
-import { auth } from '$lib/server/auth';
+import type { Actions, PageServerLoad } from './$types';
 import { APIError } from 'better-auth/api';
+import { auth } from '$lib/server/auth';
+
+const redirectTarget = (url: URL) => url.searchParams.get('redirectTo') || '/admin/submissions';
 
 export const load: PageServerLoad = (event) => {
 	if (event.locals.user) {
-		return redirect(302, '/demo/better-auth');
+		throw redirect(302, redirectTarget(event.url));
 	}
+
 	return {};
 };
 
@@ -29,10 +31,11 @@ export const actions: Actions = {
 			if (error instanceof APIError) {
 				return fail(400, { message: error.message || 'Signin failed' });
 			}
+
 			return fail(500, { message: 'Unexpected error' });
 		}
 
-		return redirect(302, '/demo/better-auth');
+		throw redirect(302, redirectTarget(event.url));
 	},
 	signUpEmail: async (event) => {
 		const formData = await event.request.formData();
@@ -50,12 +53,15 @@ export const actions: Actions = {
 				}
 			});
 		} catch (error) {
+			console.error(error);
+
 			if (error instanceof APIError) {
 				return fail(400, { message: error.message || 'Registration failed' });
 			}
+
 			return fail(500, { message: 'Unexpected error' });
 		}
 
-		return redirect(302, '/demo/better-auth');
+		throw redirect(302, redirectTarget(event.url));
 	}
 };
