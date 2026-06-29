@@ -5,8 +5,12 @@ import { sveltekitCookies } from 'better-auth/svelte-kit';
 import { getRequestEvent } from '$app/server';
 import { db } from '$lib/server/db';
 
+const productionUrl = env.VERCEL_PROJECT_PRODUCTION_URL
+	? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`
+	: undefined;
+
 export const auth = betterAuth({
-	baseURL: env.ORIGIN,
+	baseURL: productionUrl ?? env.ORIGIN,
 	secret: env.BETTER_AUTH_SECRET,
 	database: drizzleAdapter(db, { provider: 'sqlite' }),
 	emailAndPassword: { enabled: true },
