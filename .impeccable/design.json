@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-16T00:00:00-07:00",
+  "title": "Design System: Hand In Hand",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Private Ink",
+        "canonical": "#0e0e0e",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(45% 0 0)", "oklch(58% 0 0)", "oklch(70% 0 0)", "oklch(82% 0 0)", "oklch(94% 0 0)"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Charcoal Surface",
+        "canonical": "#131313",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(24% 0 0)", "oklch(34% 0 0)", "oklch(45% 0 0)", "oklch(58% 0 0)", "oklch(70% 0 0)", "oklch(82% 0 0)", "oklch(94% 0 0)"]
+      },
+      "surface-low": {
+        "role": "neutral",
+        "displayName": "Low Charcoal",
+        "canonical": "#1c1b1b",
+        "tonalRamp": ["oklch(16% 0.003 30)", "oklch(25% 0.003 30)", "oklch(35% 0.003 30)", "oklch(46% 0.003 30)", "oklch(58% 0.003 30)", "oklch(70% 0.003 30)", "oklch(82% 0.003 30)", "oklch(94% 0.003 30)"]
+      },
+      "surface-high": {
+        "role": "neutral",
+        "displayName": "Raised Charcoal",
+        "canonical": "#2a2a2a",
+        "tonalRamp": ["oklch(18% 0 0)", "oklch(28% 0 0)", "oklch(38% 0 0)", "oklch(48% 0 0)", "oklch(60% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Candle Gold",
+        "canonical": "#e9c176",
+        "tonalRamp": ["oklch(18% 0.045 80)", "oklch(28% 0.06 80)", "oklch(40% 0.075 80)", "oklch(52% 0.085 80)", "oklch(64% 0.09 80)", "oklch(74% 0.085 80)", "oklch(84% 0.06 80)", "oklch(94% 0.025 80)"]
+      },
+      "gold-deep": {
+        "role": "primary",
+        "displayName": "Deep Gold Ground",
+        "canonical": "#412d00",
+        "tonalRamp": ["oklch(18% 0.05 80)", "oklch(28% 0.065 80)", "oklch(40% 0.075 80)", "oklch(52% 0.08 80)", "oklch(64% 0.075 80)", "oklch(74% 0.06 80)", "oklch(84% 0.04 80)", "oklch(94% 0.02 80)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#e5e2e1",
+        "tonalRamp": ["oklch(18% 0.002 30)", "oklch(30% 0.003 30)", "oklch(42% 0.004 30)", "oklch(54% 0.005 30)", "oklch(66% 0.005 30)", "oklch(78% 0.004 30)", "oklch(88% 0.003 30)", "oklch(96% 0.002 30)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Warm Muted Text",
+        "canonical": "#d1c5b4",
+        "tonalRamp": ["oklch(18% 0.012 70)", "oklch(30% 0.014 70)", "oklch(42% 0.016 70)", "oklch(54% 0.018 70)", "oklch(66% 0.016 70)", "oklch(76% 0.014 70)", "oklch(86% 0.01 70)", "oklch(95% 0.006 70)"]
+      },
+      "outline": {
+        "role": "neutral",
+        "displayName": "Old Brass Outline",
+        "canonical": "#9a8f80",
+        "tonalRamp": ["oklch(18% 0.012 70)", "oklch(29% 0.014 70)", "oklch(40% 0.016 70)", "oklch(51% 0.018 70)", "oklch(62% 0.018 70)", "oklch(73% 0.014 70)", "oklch(84% 0.01 70)", "oklch(94% 0.006 70)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Ash Rule",
+        "canonical": "#4e4639",
+        "tonalRamp": ["oklch(17% 0.015 70)", "oklch(28% 0.018 70)", "oklch(39% 0.02 70)", "oklch(50% 0.02 70)", "oklch(61% 0.018 70)", "oklch(72% 0.014 70)", "oklch(83% 0.01 70)", "oklch(94% 0.006 70)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero statements and the largest trust-building claims."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings and page-level transitions."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cards, form headings, founder blocks, and process labels."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Explanatory copy for visitors under stress."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, short buttons, and form labels only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "inset-vigil",
+        "value": "inset 0 0 7rem rgb(0 0 0 / 0.24)",
+        "purpose": "Quiet internal glow for message panels."
+      },
+      {
+        "name": "deep-inset-vigil",
+        "value": "inset 0 0 7rem rgb(0 0 0 / 0.42)",
+        "purpose": "More enclosed atmosphere for private-weight panels."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease",
+        "purpose": "Default state feedback for buttons and navigation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "48rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action treatment for taking a first step or requesting help.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Get Help Now</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; background: var(--color-gold, #e9c176); color: var(--color-gold-deep, #412d00); padding: 16px 32px; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; border-radius: 0; transition: opacity 150ms ease, background-color 150ms ease, color 150ms ease, border-color 150ms ease; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-paper, #e5e2e1); outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action treatment for learning more without competing with the primary step.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Learn More</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--color-paper, #e5e2e1); padding: 16px 32px; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: 1px solid rgb(78 70 57 / 1); border-radius: 0; transition: border-color 150ms ease, color 150ms ease; } .ds-btn-outline:hover { border-color: var(--color-gold, #e9c176); color: var(--color-gold, #e9c176); } .ds-btn-outline:focus-visible { outline: 2px solid var(--color-gold, #e9c176); outline-offset: 3px; }"
+    },
+    {
+      "name": "Underline Field",
+      "kind": "input",
+      "refersTo": "field-underline",
+      "description": "Transparent form field for confidential contact flows.",
+      "html": "<label class=\"ds-field\"><span>Name (Required)</span><input placeholder=\"Your full name\" /></label>",
+      "css": ".ds-field { display: block; color: var(--color-outline, #9a8f80); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; } .ds-field input { display: block; width: 100%; margin-top: 8px; padding: 16px 0; border: 0; border-bottom: 1px solid rgb(78 70 57 / 1); background: transparent; color: var(--color-paper, #e5e2e1); font: inherit; font-size: 18px; font-weight: 400; letter-spacing: normal; text-transform: none; outline: none; transition: border-color 150ms ease; } .ds-field input::placeholder { color: #9a8f80; } .ds-field input:focus { border-bottom-color: var(--color-gold, #e9c176); } .ds-field input:focus-visible { outline: 2px solid var(--color-gold, #e9c176); outline-offset: 4px; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "description": "Fixed public-site navigation with subdued links and a gold action.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">Hand In Hand</a><div class=\"ds-links\"><a class=\"ds-active\" href=\"#\">Home</a><a href=\"#\">Get Help</a><a href=\"#\">Churches</a></div><a class=\"ds-nav-cta\" href=\"#\">Get Help Now</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: rgb(19 19 19 / 0.9); color: var(--color-paper, #e5e2e1); border-bottom: 1px solid rgb(78 70 57 / 0.3); padding: 16px 48px; backdrop-filter: blur(24px); } .ds-brand { color: var(--color-gold, #e9c176); font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; text-decoration: none; } .ds-links { display: flex; gap: 40px; } .ds-links a { color: #77716a; font-family: 'Source Serif 4', Georgia, serif; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; transition: color 150ms ease; } .ds-links a:hover, .ds-links .ds-active { color: var(--color-gold, #e9c176); } .ds-active { border-bottom: 1px solid var(--color-gold, #e9c176); padding-bottom: 4px; } .ds-nav-cta { background: var(--color-gold, #e9c176); color: var(--color-gold-deep, #412d00); padding: 12px 32px; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; }"
+    },
+    {
+      "name": "Atmosphere Panel",
+      "kind": "custom",
+      "description": "Signature dark panel for private, unseen, or message-centered moments.",
+      "html": "<div class=\"ds-atmosphere\"><span></span></div>",
+      "css": ".ds-atmosphere { min-height: 320px; display: grid; place-items: center; border: 1px solid #2d2b27; background: radial-gradient(ellipse at center, rgb(22 22 21 / 0.7) 0%, rgb(12 12 12 / 0.88) 64%), linear-gradient(145deg, rgb(20 20 20), rgb(10 10 10)); box-shadow: inset 0 0 7rem rgb(0 0 0 / 0.42); } .ds-atmosphere span { width: 1px; height: 144px; background: linear-gradient(to bottom, transparent, rgb(233 193 118 / 0.52), transparent); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Confessional",
+    "overview": "This system should feel like a private room held open by someone steady: low light, direct language, no performance. The dark surface is not decorative dark mode; it creates privacy and seriousness for visitors who may be cautious, ashamed, protective, or evaluating trust on behalf of someone else.\n\nThe visual language is intentionally sparse. Serif type carries humanity and gravity, Manrope carries clarity and legibility, and gold appears only where commitment, action, or spiritual weight needs focus. Layouts use generous spacing, firm rules, square edges, and tonal panels instead of cheerful illustration or glossy nonprofit polish.",
+    "keyCharacteristics": [
+      "Near-black privacy with paper text and restrained gold emphasis.",
+      "Serif-led hierarchy with sans-serif body copy for clarity.",
+      "Flat, square, rule-based surfaces; depth comes from tone and inset atmosphere.",
+      "Simple calls to action that feel consequential, not promotional.",
+      "Language and layout that treat all three audiences with equal seriousness."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Gold is the only accent. Do not introduce blues, purples, greens, or red alert tones unless a future system explicitly defines semantic states.",
+        "section": "colors"
+      },
+      {
+        "name": "The Privacy First Rule",
+        "body": "Charcoal surfaces carry the brand. Do not switch public ministry pages to cream, white, beige, or cheerful pastel backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold Is Consequence Rule",
+        "body": "Use gold for action and sacred emphasis, not decoration. If every label is gold, none of them are.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Costume Rule",
+        "body": "Do not use monospace to create seriousness. This brand is not technical, industrial, or terminal-like.",
+        "section": "typography"
+      },
+      {
+        "name": "The Label Rationing Rule",
+        "body": "Uppercase tracked labels may identify controls and navigation, but repeated tiny section eyebrows are prohibited as a default page scaffold.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-by-Default Rule",
+        "body": "Surfaces rest on the page. Do not combine a decorative 1px border with a large soft drop shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Tonal Depth Rule",
+        "body": "Use surface, surface-low, surface-high, borders, and inset atmosphere before reaching for exterior shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the near-black, paper, and gold identity when adding new public pages.",
+      "Do use gold sparingly for action, active state, and spiritual emphasis.",
+      "Do keep body copy direct, shame-free, and concrete.",
+      "Do treat people seeking help, potential walkers, and church leaders with equal visual priority.",
+      "Do keep surfaces square, flat, and structured with thin borders and tonal changes.",
+      "Do verify contrast for muted text, placeholders, labels, and nav links; WCAG AA is the baseline.",
+      "Do use process numbers only when the content is genuinely sequential and the order matters."
+    ],
+    "donts": [
+      "Don't make this feel like a churchy brochure, therapy startup, crisis hotline, luxury nonprofit, corporate SaaS, guilt-heavy revival language, or generic inspirational ministry branding.",
+      "Don't use cream, beige, white, pastel, purple-gradient, or cheerful nonprofit palettes.",
+      "Don't add rounded cards, pill-heavy sections, glassmorphism, decorative drop shadows, or marketing-style metric blocks.",
+      "Don't repeat tiny uppercase tracked eyebrows above every section heading.",
+      "Don't use border-left or border-right greater than 1px as a colored accent on cards, callouts, or list items.",
+      "Don't introduce hand-drawn sketch SVGs, doodle illustrations, stripe backgrounds, or generic symbolic religious clip art.",
+      "Don't let forms feel casual. Every field and checkbox should communicate care, discretion, and responsibility."
+    ]
+  }
+}
