@@ -2,4 +2,4 @@
 	import HomePage from '$lib/pages/HomePage.svelte';
 </script>
 
-<HomePage locale="en" />
+<HomePage locale="es" />
