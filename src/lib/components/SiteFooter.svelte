@@ -38,7 +38,7 @@
 		>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localizeHref('/get-help') as Pathname}>{m.footer_connect()}</a
+			href={localizeHref('/get-involved') as Pathname}>{m.footer_connect()}</a
 		>
 	</div>
 </footer>

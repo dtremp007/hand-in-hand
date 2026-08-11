@@ -22,7 +22,7 @@
 				{content.hero.subtitle}
 			</p>
 			<div class="mt-12 flex flex-wrap gap-6">
-				<GoldButton href={localizeHref('/get-help') as Pathname}>{content.hero.getHelp}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.hero.getHelp}</GoldButton>
 				<GoldButton href={localizeHref('/about') as Pathname} variant="outline"
 					>{content.hero.learnMore}</GoldButton
 				>
@@ -127,7 +127,7 @@
 				{content.cta.quote}
 			</p>
 			<div class="mt-10">
-				<GoldButton href={localizeHref('/get-help') as Pathname}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.cta.button}</GoldButton>
 			</div>
 		</SectionFrame>
 	</main>

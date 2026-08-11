@@ -11,15 +11,10 @@ export const seo: SeoContent = {
 		description:
 			'Learn how Hand In Hand walks alongside people through steady relationships, honest presence, and confidential faith-rooted care.'
 	},
-	'/get-help': {
-		title: 'Get Confidential Support',
+	'/get-involved': {
+		title: 'Get Involved',
 		description:
-			'Take a first step toward personal, confidential support from someone committed to listening and walking alongside you.'
-	},
-	'/help-someone': {
-		title: 'Walk Alongside Someone',
-		description:
-			'Learn what it means to offer steady, responsible support to someone moving through a difficult or private season.'
+			'Whether you are seeking freedom or ready to walk with someone else, take the first step toward confidential, faith-rooted support.'
 	},
 	'/churches': {
 		title: 'Support for Churches',

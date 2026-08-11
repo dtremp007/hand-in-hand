@@ -1,6 +1,6 @@
 <script lang="ts">
 	let {
-		href = '/get-help',
+		href = '/get-involved',
 		variant = 'solid',
 		children
 	} = $props<{ href?: string; variant?: 'solid' | 'outline'; children: import('svelte').Snippet }>();

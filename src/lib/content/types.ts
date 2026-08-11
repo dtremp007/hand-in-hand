@@ -21,37 +21,33 @@ export type AboutContent = {
 	cta: { button: string };
 };
 
-export type GetHelpContent = {
-	intro: string;
-	form: {
-		title: string;
-		subtitle: string;
-		fields: {
-			name: string;
-			id: string;
-			label: string;
-			placeholder: string;
-			type: string;
-			required: boolean;
-		}[];
-		messageLabel: string;
-		messagePlaceholder: string;
-		checkbox: string;
-		quote: string;
-		submit: string;
-		success: string;
-	};
-};
-
-export type HelpSomeoneContent = {
+export type GetInvolvedContent = {
 	title: string;
 	subtitle: string;
 	victorIntro: string;
+	seekerIntro: string;
 	guidelines: { title: string; items: string[] };
 	form: {
-		expectation: string;
 		title: string;
-		fields: { name: string; label: string; rows: number; required: boolean }[];
+		subtitle: string;
+		firstName: string;
+		lastName: string;
+		whatsapp: string;
+		whatsappHint: string;
+		email: string;
+		age: string;
+		location: string;
+		locationHint: string;
+		language: string;
+		languageHint: string;
+		situation: string;
+		roleLabel: string;
+		victor: string;
+		seeker: string;
+		partner: string;
+		partnerHint: string;
+		confidentialityTitle: string;
+		confidentiality: string;
 		checkbox: string;
 		submit: string;
 		success: string;
@@ -97,8 +93,7 @@ export type SeoContent = Record<
 export type SiteContent = {
 	home: HomeContent;
 	about: AboutContent;
-	getHelp: GetHelpContent;
-	helpSomeone: HelpSomeoneContent;
+	getInvolved: GetInvolvedContent;
 	contact: ContactContent;
 	zoomSchedule: ZoomScheduleContent;
 	churches: ChurchesContent;

@@ -11,15 +11,10 @@ export const seo: SeoContent = {
 		description:
 			'Conoce cómo Hand In Hand camina junto a las personas a través de relaciones firmes, presencia honesta y cuidado confidencial basado en la fe.'
 	},
-	'/get-help': {
-		title: 'Obtener apoyo confidencial',
+	'/get-involved': {
+		title: 'Involúcrate',
 		description:
-			'Da el primer paso hacia apoyo personal y confidencial de alguien comprometido a escucharte y caminar contigo.'
-	},
-	'/help-someone': {
-		title: 'Camina junto a alguien',
-		description:
-			'Aprende lo que significa ofrecer apoyo firme y responsable a alguien que atraviesa una temporada difícil o privada.'
+			'Ya sea que busques libertad o estés listo para caminar con alguien más, da el primer paso hacia apoyo confidencial y basado en la fe.'
 	},
 	'/churches': {
 		title: 'Apoyo para iglesias',

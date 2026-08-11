@@ -1,7 +1,3 @@
 <script lang="ts">
-	import HelpSomeonePage from '$lib/pages/HelpSomeonePage.svelte';
-
-	let { form } = $props();
+	// Redirect handled in +page.server.ts
 </script>
-
-<HelpSomeonePage {form} />

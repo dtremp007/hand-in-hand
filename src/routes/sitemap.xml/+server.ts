@@ -3,8 +3,7 @@ import type { RequestHandler } from './$types';
 const canonicalRoutes = [
 	'/',
 	'/about',
-	'/get-help',
-	'/help-someone',
+	'/get-involved',
 	'/churches',
 	'/contact',
 	'/zoom-schedule'

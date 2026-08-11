@@ -18,11 +18,10 @@
 
 	const links = $derived([
 		{ href: localizeHref('/') as Pathname, label: m.nav_home(), key: 'home' },
-		{ href: localizeHref('/get-help') as Pathname, label: m.nav_get_help(), key: 'get-help' },
 		{
-			href: localizeHref('/help-someone') as Pathname,
-			label: m.nav_help_someone(),
-			key: 'help-someone'
+			href: localizeHref('/get-involved') as Pathname,
+			label: m.nav_get_involved(),
+			key: 'get-involved'
 		},
 		{ href: localizeHref('/churches') as Pathname, label: m.nav_churches(), key: 'churches' },
 		{ href: localizeHref('/about') as Pathname, label: m.nav_about(), key: 'about' },
@@ -72,10 +71,10 @@
 				{languageLabel}
 			</a>
 			<a
-				href={localizeHref('/get-help') as Pathname}
+				href={localizeHref('/get-involved') as Pathname}
 				class="rounded-full border border-gold/40 bg-gold px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold lg:px-8"
 			>
-				{m.nav_get_help_now()}
+				{m.nav_get_involved_now()}
 			</a>
 		</div>
 
@@ -126,11 +125,11 @@
 			{/each}
 			<div class="mt-4 flex w-full max-w-xs flex-col items-stretch gap-2.5">
 				<a
-					href={localizeHref('/get-help') as Pathname}
+					href={localizeHref('/get-involved') as Pathname}
 					onclick={() => (open = false)}
 					class="rounded-full border border-gold/40 bg-gold px-4 py-3 text-center text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold"
 				>
-					{m.nav_get_help_now()}
+					{m.nav_get_involved_now()}
 				</a>
 				<a
 					href={languageHref}

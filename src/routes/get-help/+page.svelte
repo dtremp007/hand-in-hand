@@ -1,7 +1,3 @@
 <script lang="ts">
-	import GetHelpPage from '$lib/pages/GetHelpPage.svelte';
-
-	let { form } = $props();
+	// Redirect handled in +page.server.ts
 </script>
-
-<GetHelpPage {form} />
