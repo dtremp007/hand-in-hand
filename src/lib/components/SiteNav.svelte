@@ -1,13 +1,36 @@
 <script lang="ts">
+	import type { Pathname } from '$app/types';
 	import { page } from '$app/state';
-	import { getContent, localePath, switchLocalePath, type Locale } from '$lib/content';
+	import { m } from '$lib/paraglide/messages';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
-	let { active = 'home', locale = 'en' } = $props<{ active?: string; locale?: Locale }>();
+	let { active = 'home' } = $props<{ active?: string }>();
 	let open = $state(false);
 
-	const nav = $derived(getContent(locale).nav);
-	const links = $derived(nav.links);
-	const languageHref = $derived(switchLocalePath(page.url.pathname, locale === 'en' ? 'es' : 'en'));
+	const locale = $derived(getLocale());
+	const otherLocale = $derived(locale === 'en' ? 'es' : 'en');
+	const languageHref = $derived(
+		localizeHref(page.url.pathname, { locale: otherLocale }) as Pathname
+	);
+	const languageLabel = $derived(
+		otherLocale === 'es' ? m.nav_language_to_es() : m.nav_language_to_en()
+	);
+
+	const links = $derived([
+		{ href: localizeHref('/') as Pathname, label: m.nav_home(), key: 'home' },
+		{
+			href: localizeHref('/get-involved') as Pathname,
+			label: m.nav_get_involved(),
+			key: 'get-involved'
+		},
+		{ href: localizeHref('/churches') as Pathname, label: m.nav_churches(), key: 'churches' },
+		{ href: localizeHref('/about') as Pathname, label: m.nav_about(), key: 'about' },
+		{
+			href: localizeHref('/zoom-schedule') as Pathname,
+			label: m.nav_zoom_schedule(),
+			key: 'zoom-schedule'
+		}
+	]);
 </script>
 
 <nav
@@ -20,7 +43,7 @@
 >
 	<div class="flex items-center justify-between gap-4">
 		<a
-			href={localePath(locale, '/')}
+			href={localizeHref('/') as Pathname}
 			class="font-serif text-xl font-semibold tracking-tight text-gold md:text-2xl">Hand In Hand</a
 		>
 
@@ -39,25 +62,26 @@
 			{/each}
 		</div>
 
-		<div class="hidden flex-col items-end gap-2.5 md:flex">
-			<a
-				href={localePath(locale, '/get-help')}
-				class="rounded-full border border-gold/40 bg-gold px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold lg:px-8"
-			>
-				{nav.getHelpNow}
-			</a>
+		<div class="hidden flex-col items-center gap-2.5 md:flex md:flex-row">
 			<a
 				href={languageHref}
+				data-sveltekit-reload
 				class="rounded-full border border-gold/50 px-5 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold transition hover:bg-gold hover:text-gold-deep"
 			>
-				{nav.languageSwitch}
+				{languageLabel}
+			</a>
+			<a
+				href={localizeHref('/get-involved') as Pathname}
+				class="rounded-full border border-gold/40 bg-gold px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold lg:px-8"
+			>
+				{m.nav_get_involved_now()}
 			</a>
 		</div>
 
 		<button
 			onclick={() => (open = !open)}
 			class="flex items-center justify-center md:hidden"
-			aria-label="Toggle menu"
+			aria-label={m.nav_toggle_menu()}
 			aria-expanded={open}
 		>
 			{#if open}
@@ -101,18 +125,19 @@
 			{/each}
 			<div class="mt-4 flex w-full max-w-xs flex-col items-stretch gap-2.5">
 				<a
-					href={localePath(locale, '/get-help')}
+					href={localizeHref('/get-involved') as Pathname}
 					onclick={() => (open = false)}
 					class="rounded-full border border-gold/40 bg-gold px-4 py-3 text-center text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold"
 				>
-					{nav.getHelpNow}
+					{m.nav_get_involved_now()}
 				</a>
 				<a
 					href={languageHref}
+					data-sveltekit-reload
 					onclick={() => (open = false)}
 					class="rounded-full border border-gold/50 px-4 py-2.5 text-center text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold transition hover:bg-gold hover:text-gold-deep"
 				>
-					{nav.languageSwitch}
+					{languageLabel}
 				</a>
 			</div>
 		</div>

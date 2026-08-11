@@ -1,15 +1,16 @@
 <script lang="ts">
 	import PageShell from '$lib/components/PageShell.svelte';
 	import { getContent, type Locale } from '$lib/content';
+	import { getLocale } from '$lib/paraglide/runtime';
 
 	type FormResult = { success?: boolean; error?: string } | null | undefined;
 
-	let { locale = 'en', form }: { locale?: Locale; form?: FormResult } = $props();
+	let { form }: { form?: FormResult } = $props();
 
-	const content = $derived(getContent(locale).contact);
+	const content = $derived(getContent(getLocale() as Locale).contact);
 </script>
 
-<PageShell active="contact" {locale}>
+<PageShell active="contact">
 	<main class="mx-auto w-full max-w-4xl flex-grow px-6 pt-36 pb-24 md:px-12 md:pt-44">
 		<section class="mb-16">
 			<h1 class="font-serif text-5xl leading-tight md:text-7xl">{content.title}</h1>

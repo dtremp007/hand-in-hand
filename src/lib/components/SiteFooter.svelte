@@ -1,18 +1,19 @@
 <script lang="ts">
-	import { getContent, localePath, type Locale } from '$lib/content';
-
-	let { locale = 'en' } = $props<{ locale?: Locale }>();
-
-	const footer = $derived(getContent(locale).footer);
+	import type { Pathname } from '$app/types';
+	import { m } from '$lib/paraglide/messages';
+	import { localizeHref } from '$lib/paraglide/runtime';
 </script>
 
 <footer
 	class="mt-auto flex w-full flex-col gap-8 bg-ink px-6 py-14 md:flex-row md:items-start md:justify-between md:px-12"
 >
 	<div class="space-y-4">
-		<a href={localePath(locale, '/')} class="font-serif text-xl text-gold">Hand In Hand Ministry</a>
+		<a
+			href={localizeHref('/') as Pathname}
+			class="font-serif text-xl text-gold">Hand In Hand Ministry</a
+		>
 		<p class="max-w-md text-xs uppercase tracking-[0.18em] text-gray-500">
-			{footer.tagline}
+			{m.footer_tagline()}
 		</p>
 	</div>
 
@@ -21,23 +22,23 @@
 	>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localePath(locale, '/about')}>{footer.mission}</a
+			href={localizeHref('/about') as Pathname}>{m.footer_mission()}</a
 		>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localePath(locale, '/churches')}>{footer.churches}</a
+			href={localizeHref('/churches') as Pathname}>{m.footer_churches()}</a
 		>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localePath(locale, '/zoom-schedule')}>{footer.zoomSchedule}</a
+			href={localizeHref('/zoom-schedule') as Pathname}>{m.footer_zoom_schedule()}</a
 		>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localePath(locale, '/contact')}>{footer.contact}</a
+			href={localizeHref('/contact') as Pathname}>{m.footer_contact()}</a
 		>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localePath(locale, '/get-help')}>{footer.connect}</a
+			href={localizeHref('/get-involved') as Pathname}>{m.footer_connect()}</a
 		>
 	</div>
 </footer>

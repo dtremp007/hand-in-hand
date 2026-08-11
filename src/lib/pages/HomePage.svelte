@@ -1,16 +1,16 @@
 <script lang="ts">
+	import type { Pathname } from '$app/types';
 	import GoldButton from '$lib/components/GoldButton.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
 	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
 	import SectionFrame from '$lib/components/SectionFrame.svelte';
-	import { getContent, localePath, type Locale } from '$lib/content';
+	import { getContent, type Locale } from '$lib/content';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
-	let { locale = 'en' }: { locale?: Locale } = $props();
-
-	const content = $derived(getContent(locale).home);
+	const content = $derived(getContent(getLocale() as Locale).home);
 </script>
 
-<PageShell active="home" {locale}>
+<PageShell active="home">
 	<main class="flex-grow">
 		<SectionFrame spacing="pt-44 pb-24 md:pt-56">
 			<h1
@@ -22,19 +22,26 @@
 				{content.hero.subtitle}
 			</p>
 			<div class="mt-12 flex flex-wrap gap-6">
-				<GoldButton href={localePath(locale, '/get-help')}>{content.hero.getHelp}</GoldButton>
-				<GoldButton href={localePath(locale, '/about')} variant="outline"
+				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.hero.getHelp}</GoldButton>
+				<GoldButton href={localizeHref('/about') as Pathname} variant="outline"
 					>{content.hero.learnMore}</GoldButton
 				>
 			</div>
 		</SectionFrame>
 
-		<SectionFrame spacing="py-24 text-center">
-			<div class="grid gap-px bg-[#4e4639]/40 md:grid-cols-2">
-				{#each content.phases as phase (phase.title)}
-					<div class="bg-surface p-10 text-left md:p-14">
-						<h3 class="font-serif text-3xl">{phase.title}</h3>
-						<p class="mt-6 whitespace-pre-line text-muted">{phase.body}</p>
+		<SectionFrame spacing="py-24 md:py-32">
+			<p class="text-center text-xs font-extrabold uppercase tracking-[0.42em] text-gold">Our Foundation</p>
+			<h2 class="mt-6 text-center font-serif text-4xl leading-tight text-paper md:text-5xl">
+				Rooted in Scripture. Lived in community.
+			</h2>
+
+			<div class="mt-16 grid gap-8 md:grid-cols-2">
+				{#each content.phases as phase, i (phase.title)}
+					<div class="rounded-sm border border-[#2d2b27] bg-ink p-10">
+						<span class="text-5xl font-bold text-gold/80">0{i + 1}</span>
+						<p class="mt-1 text-sm font-bold uppercase tracking-widest text-gold/60">{phase.scripture}</p>
+						<h3 class="mt-6 font-serif text-2xl text-paper">{phase.heading}</h3>
+						<p class="mt-4 whitespace-pre-line text-base leading-relaxed text-muted">{phase.body}</p>
 					</div>
 				{/each}
 			</div>
@@ -127,7 +134,7 @@
 				{content.cta.quote}
 			</p>
 			<div class="mt-10">
-				<GoldButton href={localePath(locale, '/get-help')}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.cta.button}</GoldButton>
 			</div>
 		</SectionFrame>
 	</main>

@@ -1,8 +1,3 @@
 <script lang="ts">
-	import HelpSomeonePage from '$lib/pages/HelpSomeonePage.svelte';
-	import type { ActionData } from './$types';
-
-	let { form }: { form: ActionData } = $props();
+	// Redirect handled in +page.server.ts
 </script>
-
-<HelpSomeonePage locale="en" {form} />

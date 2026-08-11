@@ -2,7 +2,7 @@ export type Locale = 'en' | 'es';
 
 export type HomeContent = {
 	hero: { title: string; subtitle: string; getHelp: string; learnMore: string };
-	phases: { title: string; body: string }[];
+	phases: { title: string; scripture: string; heading: string; body: string }[];
 	testimony: { title: string; description: string };
 	statistics: string;
 	revelation: string;
@@ -21,37 +21,33 @@ export type AboutContent = {
 	cta: { button: string };
 };
 
-export type GetHelpContent = {
-	intro: string;
-	form: {
-		title: string;
-		subtitle: string;
-		fields: {
-			name: string;
-			id: string;
-			label: string;
-			placeholder: string;
-			type: string;
-			required: boolean;
-		}[];
-		messageLabel: string;
-		messagePlaceholder: string;
-		checkbox: string;
-		quote: string;
-		submit: string;
-		success: string;
-	};
-};
-
-export type HelpSomeoneContent = {
+export type GetInvolvedContent = {
 	title: string;
 	subtitle: string;
 	victorIntro: string;
+	seekerIntro: string;
 	guidelines: { title: string; items: string[] };
 	form: {
-		expectation: string;
 		title: string;
-		fields: { name: string; label: string; rows: number; required: boolean }[];
+		subtitle: string;
+		firstName: string;
+		lastName: string;
+		whatsapp: string;
+		whatsappHint: string;
+		email: string;
+		age: string;
+		location: string;
+		locationHint: string;
+		language: string;
+		languageHint: string;
+		situation: string;
+		roleLabel: string;
+		victor: string;
+		seeker: string;
+		partner: string;
+		partnerHint: string;
+		confidentialityTitle: string;
+		confidentiality: string;
 		checkbox: string;
 		submit: string;
 		success: string;
@@ -76,20 +72,14 @@ export type ZoomScheduleContent = {
 	cta: string;
 };
 
-export type NavContent = {
-	links: { href: string; label: string; key: string }[];
-	getHelpNow: string;
-	zoomSchedule: string;
-	languageSwitch: string;
-};
-
-export type FooterContent = {
-	tagline: string;
-	mission: string;
-	churches: string;
-	contact: string;
-	connect: string;
-	zoomSchedule: string;
+export type ChurchesContent = {
+	title: string;
+	subtitle: string[];
+	focus: { title: string; intro: string; items: string[] };
+	boundaries: { title: string; intro: string; items: string[] };
+	trust: { label: string; quote: string };
+	howItWorks: { title: string; items: string[] };
+	cta: { quote: string; button: string };
 };
 
 export type SeoContent = Record<
@@ -103,11 +93,9 @@ export type SeoContent = Record<
 export type SiteContent = {
 	home: HomeContent;
 	about: AboutContent;
-	getHelp: GetHelpContent;
-	helpSomeone: HelpSomeoneContent;
+	getInvolved: GetInvolvedContent;
 	contact: ContactContent;
 	zoomSchedule: ZoomScheduleContent;
-	nav: NavContent;
-	footer: FooterContent;
+	churches: ChurchesContent;
 	seo: SeoContent;
 };

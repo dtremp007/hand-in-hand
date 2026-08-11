@@ -1,22 +1,18 @@
 import type { SiteContent } from '../types';
 import { about } from './about';
+import { churches } from './churches';
 import { contact } from './contact';
-import { footer } from './footer';
-import { getHelp } from './get-help';
-import { helpSomeone } from './help-someone';
+import { getInvolved } from './get-involved';
 import { home } from './home';
-import { nav } from './nav';
 import { seo } from './seo';
 import { zoomSchedule } from './zoom-schedule';
 
 export const es: SiteContent = {
 	home,
 	about,
-	getHelp,
-	helpSomeone,
+	getInvolved,
 	contact,
 	zoomSchedule,
-	nav,
-	footer,
+	churches,
 	seo
 };

@@ -5,6 +5,7 @@
 	let { data }: { data: PageData } = $props();
 
 	const labels: Record<PageData['submissions'][number]['kind'], string> = {
+		get_involved: 'Get Involved',
 		get_help: 'Get Help',
 		help_someone: 'Help Someone',
 		contact: 'Contact'
@@ -17,8 +18,7 @@
 			<p class="text-xs font-bold uppercase tracking-[0.24em] text-gold">Admin</p>
 			<h1 class="mt-5 font-serif text-5xl leading-tight text-paper md:text-7xl">Submissions</h1>
 			<p class="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-				New form responses from people requesting help, offering support, or starting a church
-				conversation.
+				New form responses from people getting involved or starting a church conversation.
 			</p>
 		</section>
 
@@ -46,17 +46,33 @@
 								</td>
 								<td class="whitespace-nowrap px-5 py-5 text-gold">{labels[item.kind]}</td>
 								<td class="px-5 py-5 font-serif text-xl text-paper">{item.name}</td>
-								<td class="px-5 py-5 text-paper">{item.contactInfo}</td>
+								<td class="px-5 py-5 text-paper">
+									<div class="space-y-1">
+										<p>{item.contactInfo}</p>
+										{#if item.email}
+											<p class="text-muted">{item.email}</p>
+										{/if}
+									</div>
+								</td>
 								<td class="max-w-xl px-5 py-5 text-muted">
 									<div class="space-y-3">
+										{#if item.role}
+											<p><span class="text-outline">Role:</span> {item.role}</p>
+										{/if}
+										{#if item.age}
+											<p><span class="text-outline">Age:</span> {item.age}</p>
+										{/if}
+										{#if item.language}
+											<p><span class="text-outline">Language:</span> {item.language}</p>
+										{/if}
 										{#if item.location}
 											<p><span class="text-outline">Location:</span> {item.location}</p>
 										{/if}
 										{#if item.churchName}
 											<p><span class="text-outline">Church:</span> {item.churchName}</p>
 										{/if}
-										{#if item.role}
-											<p><span class="text-outline">Role:</span> {item.role}</p>
+										{#if item.partner}
+											<p><span class="text-outline">Partner:</span> {item.partner}</p>
 										{/if}
 										{#if item.experience}
 											<p><span class="text-outline">Experience:</span> {item.experience}</p>

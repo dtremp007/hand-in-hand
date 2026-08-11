@@ -1,0 +1,18 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"nav_home": "Home",
+	"nav_get_involved": "Get Involved",
+	"nav_churches": "Churches",
+	"nav_about": "About",
+	"nav_zoom_schedule": "Zoom Schedule",
+	"nav_get_involved_now": "Get Involved",
+	"nav_language_to_es": "Español",
+	"nav_language_to_en": "English",
+	"nav_toggle_menu": "Toggle menu",
+	"footer_tagline": "© Hand In Hand Ministry. A digital sanctuary for the private struggle.",
+	"footer_mission": "Mission",
+	"footer_churches": "Churches",
+	"footer_contact": "Contact",
+	"footer_connect": "Connect",
+	"footer_zoom_schedule": "Zoom Schedule"
+}
