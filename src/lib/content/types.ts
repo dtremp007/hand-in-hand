@@ -90,6 +90,11 @@ export type SeoContent = Record<
 	}
 >;
 
+export type ProcessStepsContent = {
+	title: string;
+	steps: { title: string; body: string }[];
+};
+
 export type SiteContent = {
 	home: HomeContent;
 	about: AboutContent;
@@ -97,5 +102,6 @@ export type SiteContent = {
 	contact: ContactContent;
 	zoomSchedule: ZoomScheduleContent;
 	churches: ChurchesContent;
+	processSteps: ProcessStepsContent;
 	seo: SeoContent;
 };

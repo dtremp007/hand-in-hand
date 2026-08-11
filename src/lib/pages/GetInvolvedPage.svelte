@@ -9,7 +9,9 @@
 
 	let { form }: { form?: FormResult } = $props();
 
-	const content = $derived(getContent(getLocale() as Locale).getInvolved);
+	const site = $derived(getContent(getLocale() as Locale));
+	const content = $derived(site.getInvolved);
+	const processSteps = $derived(site.processSteps);
 </script>
 
 <PageShell active="get-involved">
@@ -42,7 +44,7 @@
 			/>
 		</section>
 
-		<ProcessSteps class="mb-24" />
+		<ProcessSteps class="mb-24" title={processSteps.title} steps={processSteps.steps} />
 
 		<section class="mx-auto max-w-2xl" id="get-involved-form">
 			<div class="mb-14 text-center">

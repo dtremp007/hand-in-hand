@@ -7,7 +7,9 @@
 	import { getContent, type Locale } from '$lib/content';
 	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
-	const content = $derived(getContent(getLocale() as Locale).home);
+	const site = $derived(getContent(getLocale() as Locale));
+	const content = $derived(site.home);
+	const processSteps = $derived(site.processSteps);
 </script>
 
 <PageShell active="home">
@@ -116,7 +118,7 @@
 		</SectionFrame>
 
 		<SectionFrame class="border-y border-[#2b2925] bg-surface-low" spacing="py-24 md:py-32">
-			<ProcessSteps variant="featured" />
+			<ProcessSteps title={processSteps.title} steps={processSteps.steps} />
 		</SectionFrame>
 
 		<SectionFrame class="bg-surface-low" spacing="py-16" innerClass="max-w-4xl">
