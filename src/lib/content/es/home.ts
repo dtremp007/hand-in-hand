@@ -10,10 +10,14 @@ export const home: HomeContent = {
 	phases: [
 		{
 			title: 'Fase #1',
+			scripture: 'Apocalipsis 3:20',
+			heading: 'Acepta el llamado',
 			body: 'La primera parte de nuestro ministerio se basa en la comprensi\u00f3n de que Dios toca a la puerta de nuestro coraz\u00f3n en busca de una relaci\u00f3n \u00edntima con nosotros. Su llamada es constante, pero somos nosotros quienes debemos tomar la iniciativa de abrir la puerta y recibirlo en nuestras vidas.\n\nCuando tomamos la decisi\u00f3n activa de aceptarlo en nuestro coraz\u00f3n, colocamos simb\u00f3licamente nuestra mano en la suya. Al hacerlo, nos comprometemos a mantenerla alejada del pecado.\n\n\u00c9l nunca nos abandonar\u00e1 y su mano sostendr\u00e1 la nuestra mientras se lo permitamos.'
 		},
 		{
 			title: 'Fase #2',
+			scripture: 'Romanos 15:1–2',
+			heading: 'Levanta a un hermano',
 			body: 'La segunda parte de nuestro ministerio consiste en brindar a las personas fuertes la oportunidad de ayudar al pr\u00f3jimo. Ponemos una mano en la de Dios y la otra en la de quienes est\u00e1n pasando por dificultades.\n\nDe este modo, manifestamos el amor de Cristo hacia nuestros hermanos. Se cree que la pornograf\u00eda es la mayor fortaleza de Satan\u00e1s en la generaci\u00f3n actual y, con este ministerio, podemos ayudarnos mutuamente a levantarnos y seguir adelante, encontrando la libertad al abrir nuestros corazones a Dios.'
 		}
 	],

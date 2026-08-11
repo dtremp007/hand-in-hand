@@ -10,11 +10,15 @@ export const home: HomeContent = {
 	phases: [
 		{
 			title: 'Phase #1',
-			body: 'The first part of our ministry is based upon the realization that God is knocking at our heart\u2019s door, seeking an intimate relationship with us. His knock is relentless, but we must take the initiative to open the door and accept Him into our lives. When we make this active decision to accept Him into our hearts, we symbolically place our hand into His hand. When our hand in is in His hand, we commit to keep it from sin. He will never leave us, and His hand will hold ours as long as we allow Him to.'
+			scripture: 'Revelation 3:20',
+			heading: 'Accept the knock',
+			body: 'The first part of our ministry is based upon the realization that God is knocking at our heart\u2019s door, seeking an intimate relationship with us. His knock is relentless, but we must take the initiative to open the door and accept Him into our lives.\n\nWhen we make this active decision to accept Him into our hearts, we symbolically place our hand into His hand. When our hand in is in His hand, we commit to keep it from sin. He will never leave us, and His hand will hold ours as long as we allow Him to.'
 		},
 		{
 			title: 'Phase #2',
-			body: 'The second part of our ministry is based upon giving those who are strong the opportunity to help the next person. We place a hand in God\u2019s hand, and the other hand in that of others who are struggling. In so doing, we exemplify the love of Christ towards our brethren. Pornography is presumably satan\u2019s greatest stronghold on today\u2019s generation, and with this ministry we can help each other up and forward, finding freedom by opening our hearts to God.'
+			scripture: 'Romans 15:1\u20132',
+			heading: 'Lift a brother up',
+			body: 'The second part of our ministry is based upon giving those who are strong the opportunity to help the next person. We place a hand in God\u2019s hand, and the other hand in that of others who are struggling.\n\nIn so doing, we exemplify the love of Christ towards our brethren. Pornography is presumably satan\u2019s greatest stronghold on today\u2019s generation, and with this ministry we can help each other up and forward, finding freedom by opening our hearts to God.'
 		}
 	],
 	testimony: {
