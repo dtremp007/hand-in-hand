@@ -1,12 +1,10 @@
 <script lang="ts">
+	import type { Pathname } from '$app/types';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import {
-		getContent,
-		getLocaleFromPath,
-		stripLocalePrefix,
-		switchLocalePath,
-		type Locale
-	} from '$lib/content';
+	import { getContent, type Locale } from '$lib/content';
+	import { deLocalizeUrl, getLocale, locales, localizeHref } from '$lib/paraglide/runtime';
+
 	import './layout.css';
 
 	let { children } = $props();
@@ -16,18 +14,22 @@
 		'Confidential, faith-rooted support connecting people with someone steady who will walk alongside them.';
 
 	let pathname = $derived(page.url.pathname.replace(/\/$/, '') || '/');
-	let locale = $derived<Locale>(getLocaleFromPath(pathname));
-	let contentPath = $derived(stripLocalePrefix(pathname));
+	let locale = $derived(getLocale() as Locale);
+	let contentPath = $derived(deLocalizeUrl(page.url).pathname.replace(/\/$/, '') || '/');
 	let seo = $derived(
 		getContent(locale).seo[contentPath] ?? { title: siteName, description: defaultDescription }
 	);
 	let title = $derived(`${seo.title} | ${siteName}`);
 	let canonical = $derived(new URL(pathname, page.url.origin).href);
-	let alternateEn = $derived(new URL(switchLocalePath(pathname, 'en'), page.url.origin).href);
-	let alternateEs = $derived(new URL(switchLocalePath(pathname, 'es'), page.url.origin).href);
+	let alternateEn = $derived(
+		new URL(localizeHref(contentPath, { locale: 'en' }), page.url.origin).href
+	);
+	let alternateEs = $derived(
+		new URL(localizeHref(contentPath, { locale: 'es' }), page.url.origin).href
+	);
 	let isPrivateRoute = $derived(pathname === '/login' || pathname.startsWith('/admin'));
-	let htmlLang = $derived(locale === 'es' ? 'es' : 'en');
 	let ogLocale = $derived(locale === 'es' ? 'es_ES' : 'en_CA');
+
 	let structuredData = $derived(
 		JSON.stringify({
 			'@context': 'https://schema.org',
@@ -65,6 +67,10 @@
 	{@html `<script type="application/ld+json">${structuredData}<\/script>`}
 </svelte:head>
 
-<div lang={htmlLang}>
-	{@render children()}
+{@render children()}
+
+<div style="display:none">
+	{#each locales as loc (loc)}
+		<a href={resolve(localizeHref(page.url.pathname, { locale: loc }) as Pathname)}>{loc}</a>
+	{/each}
 </div>

@@ -1,16 +1,16 @@
 <script lang="ts">
+	import type { Pathname } from '$app/types';
 	import GoldButton from '$lib/components/GoldButton.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
 	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
 	import SectionFrame from '$lib/components/SectionFrame.svelte';
-	import { getContent, localePath, type Locale } from '$lib/content';
+	import { getContent, type Locale } from '$lib/content';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
-	let { locale = 'en' }: { locale?: Locale } = $props();
-
-	const content = $derived(getContent(locale).home);
+	const content = $derived(getContent(getLocale() as Locale).home);
 </script>
 
-<PageShell active="home" {locale}>
+<PageShell active="home">
 	<main class="flex-grow">
 		<SectionFrame spacing="pt-44 pb-24 md:pt-56">
 			<h1
@@ -22,8 +22,8 @@
 				{content.hero.subtitle}
 			</p>
 			<div class="mt-12 flex flex-wrap gap-6">
-				<GoldButton href={localePath(locale, '/get-help')}>{content.hero.getHelp}</GoldButton>
-				<GoldButton href={localePath(locale, '/about')} variant="outline"
+				<GoldButton href={localizeHref('/get-help') as Pathname}>{content.hero.getHelp}</GoldButton>
+				<GoldButton href={localizeHref('/about') as Pathname} variant="outline"
 					>{content.hero.learnMore}</GoldButton
 				>
 			</div>
@@ -127,7 +127,7 @@
 				{content.cta.quote}
 			</p>
 			<div class="mt-10">
-				<GoldButton href={localePath(locale, '/get-help')}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/get-help') as Pathname}>{content.cta.button}</GoldButton>
 			</div>
 		</SectionFrame>
 	</main>

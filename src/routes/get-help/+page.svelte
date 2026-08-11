@@ -1,8 +1,7 @@
 <script lang="ts">
 	import GetHelpPage from '$lib/pages/GetHelpPage.svelte';
-	import type { ActionData } from './$types';
 
-	let { form }: { form: ActionData } = $props();
+	let { form } = $props();
 </script>
 
-<GetHelpPage locale="en" {form} />
+<GetHelpPage {form} />

@@ -76,20 +76,14 @@ export type ZoomScheduleContent = {
 	cta: string;
 };
 
-export type NavContent = {
-	links: { href: string; label: string; key: string }[];
-	getHelpNow: string;
-	zoomSchedule: string;
-	languageSwitch: string;
-};
-
-export type FooterContent = {
-	tagline: string;
-	mission: string;
-	churches: string;
-	contact: string;
-	connect: string;
-	zoomSchedule: string;
+export type ChurchesContent = {
+	title: string;
+	subtitle: string[];
+	focus: { title: string; intro: string; items: string[] };
+	boundaries: { title: string; intro: string; items: string[] };
+	trust: { label: string; quote: string };
+	howItWorks: { title: string; items: string[] };
+	cta: { quote: string; button: string };
 };
 
 export type SeoContent = Record<
@@ -107,7 +101,6 @@ export type SiteContent = {
 	helpSomeone: HelpSomeoneContent;
 	contact: ContactContent;
 	zoomSchedule: ZoomScheduleContent;
-	nav: NavContent;
-	footer: FooterContent;
+	churches: ChurchesContent;
 	seo: SeoContent;
 };

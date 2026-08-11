@@ -1,15 +1,15 @@
 <script lang="ts">
+	import type { Pathname } from '$app/types';
 	import GoldButton from '$lib/components/GoldButton.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
 	import SquareList from '$lib/components/SquareList.svelte';
-	import { getContent, localePath, type Locale } from '$lib/content';
+	import { getContent, type Locale } from '$lib/content';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
-	let { locale = 'en' }: { locale?: Locale } = $props();
-
-	const content = $derived(getContent(locale).about);
+	const content = $derived(getContent(getLocale() as Locale).about);
 </script>
 
-<PageShell active="about" {locale}>
+<PageShell active="about">
 	<main class="mx-auto w-full max-w-7xl flex-grow px-6 pt-36 pb-24 md:px-12 md:pt-44">
 		<section class="mb-24 text-center">
 			<h1 class="font-serif text-5xl leading-tight text-gold md:text-7xl">
@@ -56,7 +56,7 @@
 
 		<section class="text-center">
 			<div class="mt-10">
-				<GoldButton href={localePath(locale, '/contact')}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/contact') as Pathname}>{content.cta.button}</GoldButton>
 			</div>
 		</section>
 	</main>

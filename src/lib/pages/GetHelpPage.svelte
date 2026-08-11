@@ -3,15 +3,16 @@
 	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
 	import SquareList from '$lib/components/SquareList.svelte';
 	import { getContent, type Locale } from '$lib/content';
+	import { getLocale } from '$lib/paraglide/runtime';
 
 	type FormResult = { success?: boolean; error?: string } | null | undefined;
 
-	let { locale = 'en', form }: { locale?: Locale; form?: FormResult } = $props();
+	let { form }: { form?: FormResult } = $props();
 
-	const content = $derived(getContent(locale).getHelp);
+	const content = $derived(getContent(getLocale() as Locale).getHelp);
 </script>
 
-<PageShell active="get-help" {locale}>
+<PageShell active="get-help">
 	<main class="mx-auto w-full max-w-7xl flex-grow px-6 pt-36 pb-24 md:px-12 md:pt-44">
 		<section class="mb-28 max-w-4xl">
 			<p class="text-xl leading-relaxed text-muted md:text-2xl">{content.intro}</p>
