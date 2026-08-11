@@ -5,4 +5,4 @@
 	let { form }: { form: ActionData } = $props();
 </script>
 
-<ContactPage locale="en" {form} />
+<ContactPage locale="es" {form} />

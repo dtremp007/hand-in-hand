@@ -1,6 +1,20 @@
 import type { RequestHandler } from './$types';
 
-const routes = ['/', '/about', '/get-help', '/help-someone', '/churches', '/contact'];
+const routes = [
+	'/',
+	'/about',
+	'/get-help',
+	'/help-someone',
+	'/churches',
+	'/contact',
+	'/zoom-schedule',
+	'/es',
+	'/es/about',
+	'/es/get-help',
+	'/es/help-someone',
+	'/es/contact',
+	'/es/zoom-schedule'
+];
 
 export const GET: RequestHandler = ({ url }) => {
 	const urls = routes

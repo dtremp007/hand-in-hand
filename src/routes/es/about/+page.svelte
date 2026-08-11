@@ -2,4 +2,4 @@
 	import AboutPage from '$lib/pages/AboutPage.svelte';
 </script>
 
-<AboutPage locale="en" />
+<AboutPage locale="es" />
