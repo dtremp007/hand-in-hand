@@ -9,7 +9,11 @@
 </script>
 
 <div class="flex min-h-screen flex-col bg-surface text-paper">
-	<SiteNav {active} />
+	<div class="print:hidden">
+		<SiteNav {active} />
+	</div>
 	{@render children()}
-	<SiteFooter />
+	<div class="print:hidden">
+		<SiteFooter />
+	</div>
 </div>

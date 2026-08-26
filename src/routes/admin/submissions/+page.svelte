@@ -1,15 +1,10 @@
 <script lang="ts">
+	import AdminNav from '$lib/components/AdminNav.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
+	import { submissionKindLabels } from '$lib/submission-display';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
-
-	const labels: Record<PageData['submissions'][number]['kind'], string> = {
-		get_involved: 'Get Involved',
-		get_help: 'Get Help',
-		help_someone: 'Help Someone',
-		contact: 'Contact'
-	};
 </script>
 
 <PageShell>
@@ -20,6 +15,7 @@
 			<p class="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
 				New form responses from people getting involved or starting a church conversation.
 			</p>
+			<AdminNav current="submissions" />
 		</section>
 
 		{#if data.submissions.length === 0}
@@ -35,16 +31,18 @@
 							<th class="px-5 py-4 font-bold">Type</th>
 							<th class="px-5 py-4 font-bold">Name</th>
 							<th class="px-5 py-4 font-bold">Contact</th>
-							<th class="px-5 py-4 font-bold">Details</th>
+							<th class="px-5 py-4 font-bold"><span class="sr-only">Open</span></th>
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-[#4e4639]/60">
-						{#each data.submissions as item}
+						{#each data.submissions as item (item.id)}
 							<tr class="align-top">
 								<td class="whitespace-nowrap px-5 py-5 text-muted">
 									{item.createdAt.toLocaleDateString()}
 								</td>
-								<td class="whitespace-nowrap px-5 py-5 text-gold">{labels[item.kind]}</td>
+								<td class="whitespace-nowrap px-5 py-5 text-gold"
+									>{submissionKindLabels[item.kind]}</td
+								>
 								<td class="px-5 py-5 font-serif text-xl text-paper">{item.name}</td>
 								<td class="px-5 py-5 text-paper">
 									<div class="space-y-1">
@@ -54,39 +52,13 @@
 										{/if}
 									</div>
 								</td>
-								<td class="max-w-xl px-5 py-5 text-muted">
-									<div class="space-y-3">
-										{#if item.role}
-											<p><span class="text-outline">Role:</span> {item.role}</p>
-										{/if}
-										{#if item.age}
-											<p><span class="text-outline">Age:</span> {item.age}</p>
-										{/if}
-										{#if item.language}
-											<p><span class="text-outline">Language:</span> {item.language}</p>
-										{/if}
-										{#if item.location}
-											<p><span class="text-outline">Location:</span> {item.location}</p>
-										{/if}
-										{#if item.churchName}
-											<p><span class="text-outline">Church:</span> {item.churchName}</p>
-										{/if}
-										{#if item.partner}
-											<p><span class="text-outline">Partner:</span> {item.partner}</p>
-										{/if}
-										{#if item.experience}
-											<p><span class="text-outline">Experience:</span> {item.experience}</p>
-										{/if}
-										{#if item.readiness}
-											<p><span class="text-outline">Readiness:</span> {item.readiness}</p>
-										{/if}
-										{#if item.prompt}
-											<p><span class="text-outline">Prompt:</span> {item.prompt}</p>
-										{/if}
-										{#if item.message}
-											<p><span class="text-outline">Message:</span> {item.message}</p>
-										{/if}
-									</div>
+								<td class="whitespace-nowrap px-5 py-5">
+									<a
+										href="/admin/submissions/{item.id}"
+										class="text-xs font-extrabold uppercase tracking-[0.2em] text-gold transition hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+									>
+										View
+									</a>
 								</td>
 							</tr>
 						{/each}

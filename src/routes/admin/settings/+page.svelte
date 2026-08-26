@@ -1,0 +1,55 @@
+<script lang="ts">
+	import { enhance } from '$app/forms';
+	import AdminNav from '$lib/components/AdminNav.svelte';
+	import PageShell from '$lib/components/PageShell.svelte';
+	import type { ActionData, PageData } from './$types';
+
+	let { data, form }: { data: PageData; form: ActionData } = $props();
+
+	const emailsValue = $derived(form?.notificationEmails ?? data.notificationEmails);
+</script>
+
+<PageShell>
+	<main class="mx-auto w-full max-w-7xl flex-grow px-6 pt-36 pb-24 md:px-12 md:pt-44">
+		<section class="mb-12">
+			<p class="text-xs font-bold uppercase tracking-[0.24em] text-gold">Admin</p>
+			<h1 class="mt-5 font-serif text-5xl leading-tight text-paper md:text-7xl">
+				Notification emails
+			</h1>
+			<p class="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
+				These addresses receive a message whenever someone submits a form. One email per line.
+			</p>
+			<AdminNav current="settings" />
+		</section>
+
+		<form class="max-w-2xl space-y-8" method="post" use:enhance>
+			{#if form?.success}
+				<p class="border border-gold/40 bg-gold/10 p-5 font-serif text-2xl text-paper">
+					Notification emails saved.
+				</p>
+			{:else if form?.error}
+				<p class="border border-red-400/40 bg-red-950/30 p-5 text-sm text-red-100">
+					{form.error}
+				</p>
+			{/if}
+
+			<label class="block">
+				<span class="text-xs font-bold uppercase tracking-[0.2em] text-outline">Recipients</span>
+				<textarea
+					name="notification_emails"
+					rows="8"
+					value={emailsValue}
+					class="mt-2 w-full resize-y border-0 border-b border-[#4e4639] bg-transparent py-4 font-mono text-sm leading-relaxed text-paper outline-none focus:border-gold"
+					placeholder={'person@example.com\nanother@example.com'}
+				></textarea>
+			</label>
+
+			<button
+				class="bg-gold px-10 py-5 text-xs font-extrabold uppercase tracking-[0.22em] text-gold-deep"
+				type="submit"
+			>
+				Save
+			</button>
+		</form>
+	</main>
+</PageShell>

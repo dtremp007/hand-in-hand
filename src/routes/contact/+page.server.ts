@@ -2,6 +2,7 @@ import { fail } from '@sveltejs/kit';
 import { m } from '$lib/paraglide/messages';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
+import { notifyFormRecipientsSafe } from '$lib/server/email';
 
 export const actions = {
 	default: async ({ request }) => {
@@ -10,6 +11,7 @@ export const actions = {
 		const churchName = formData.get('church_name')?.toString().trim() ?? '';
 		const role = formData.get('role')?.toString().trim() ?? '';
 		const contactInfo = formData.get('contact_info')?.toString().trim() ?? '';
+		const prompt = formData.get('prompt')?.toString().trim() || null;
 
 		if (!name || !churchName || !role || !contactInfo) {
 			return fail(400, {
@@ -23,7 +25,15 @@ export const actions = {
 			churchName,
 			role,
 			contactInfo,
-			prompt: formData.get('prompt')?.toString().trim() || null
+			prompt
+		});
+
+		await notifyFormRecipientsSafe('contact', {
+			name,
+			churchName,
+			role,
+			contactInfo,
+			prompt
 		});
 
 		return { success: true };

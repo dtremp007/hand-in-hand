@@ -2,6 +2,7 @@ import { fail } from '@sveltejs/kit';
 import { m } from '$lib/paraglide/messages';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
+import { notifyFormRecipientsSafe } from '$lib/server/email';
 
 export const actions = {
 	default: async ({ request }) => {
@@ -37,6 +38,19 @@ export const actions = {
 
 		await db.insert(submission).values({
 			kind: 'get_involved',
+			name: `${firstName} ${lastName}`,
+			contactInfo: whatsapp,
+			email,
+			age,
+			language,
+			location,
+			role,
+			partner,
+			message: situation,
+			confirmed
+		});
+
+		await notifyFormRecipientsSafe('get_involved', {
 			name: `${firstName} ${lastName}`,
 			contactInfo: whatsapp,
 			email,

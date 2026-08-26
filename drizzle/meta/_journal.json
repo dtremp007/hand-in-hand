@@ -15,6 +15,13 @@
       "when": 1786467508434,
       "tag": "0001_get_involved_fields",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1787766494664,
+      "tag": "0002_kind_eternity",
+      "breakpoints": true
     }
   ]
 }
