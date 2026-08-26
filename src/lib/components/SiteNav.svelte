@@ -1,20 +1,11 @@
 <script lang="ts">
 	import type { Pathname } from '$app/types';
-	import { page } from '$app/state';
+	import LanguageMenu from '$lib/components/LanguageMenu.svelte';
 	import { m } from '$lib/paraglide/messages';
-	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
+	import { localizeHref } from '$lib/paraglide/runtime';
 
 	let { active = 'home' } = $props<{ active?: string }>();
 	let open = $state(false);
-
-	const locale = $derived(getLocale());
-	const otherLocale = $derived(locale === 'en' ? 'es' : 'en');
-	const languageHref = $derived(
-		localizeHref(page.url.pathname, { locale: otherLocale }) as Pathname
-	);
-	const languageLabel = $derived(
-		otherLocale === 'es' ? m.nav_language_to_es() : m.nav_language_to_en()
-	);
 
 	const links = $derived([
 		{ href: localizeHref('/') as Pathname, label: m.nav_home(), key: 'home' },
@@ -38,8 +29,8 @@
 	class:h-dvh={open}
 	class:flex={open}
 	class:flex-col={open}
-	class:md:h-auto={open}
-	class:md:flex-none={open}
+	class:xl:h-auto={open}
+	class:xl:flex-none={open}
 >
 	<div class="flex items-center justify-between gap-4">
 		<a
@@ -47,7 +38,7 @@
 			class="font-serif text-xl font-semibold tracking-tight text-gold md:text-2xl">Hand In Hand</a
 		>
 
-		<div class="hidden flex-1 items-center justify-center gap-6 md:flex lg:gap-8">
+		<div class="hidden flex-1 items-center justify-center gap-8 xl:flex">
 			{#each links as link (link.key)}
 				<a
 					href={link.href}
@@ -62,14 +53,8 @@
 			{/each}
 		</div>
 
-		<div class="hidden flex-col items-center gap-2.5 md:flex md:flex-row">
-			<a
-				href={languageHref}
-				data-sveltekit-reload
-				class="rounded-full border border-gold/50 px-5 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold transition hover:bg-gold hover:text-gold-deep"
-			>
-				{languageLabel}
-			</a>
+		<div class="hidden items-center gap-2.5 xl:flex">
+			<LanguageMenu />
 			<a
 				href={localizeHref('/get-involved') as Pathname}
 				class="rounded-full border border-gold/40 bg-gold px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold lg:px-8"
@@ -80,7 +65,7 @@
 
 		<button
 			onclick={() => (open = !open)}
-			class="flex items-center justify-center md:hidden"
+			class="flex items-center justify-center xl:hidden"
 			aria-label={m.nav_toggle_menu()}
 			aria-expanded={open}
 		>
@@ -111,7 +96,7 @@
 	</div>
 
 	{#if open}
-		<div class="mt-6 flex flex-1 flex-col justify-center gap-6 md:hidden">
+		<div class="mt-6 flex flex-1 flex-col justify-center gap-6 xl:hidden">
 			{#each links as link (link.key)}
 				<a
 					href={link.href}
@@ -131,14 +116,7 @@
 				>
 					{m.nav_get_involved_now()}
 				</a>
-				<a
-					href={languageHref}
-					data-sveltekit-reload
-					onclick={() => (open = false)}
-					class="rounded-full border border-gold/50 px-4 py-2.5 text-center text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold transition hover:bg-gold hover:text-gold-deep"
-				>
-					{languageLabel}
-				</a>
+				<LanguageMenu stretch />
 			</div>
 		</div>
 	{/if}

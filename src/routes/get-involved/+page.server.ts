@@ -1,4 +1,5 @@
 import { fail } from '@sveltejs/kit';
+import { m } from '$lib/paraglide/messages';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
 
@@ -30,7 +31,7 @@ export const actions = {
 			!confirmed
 		) {
 			return fail(400, {
-				error: 'Please complete the required fields and confidentiality agreement before sending.'
+				error: m.form_error_get_involved()
 			});
 		}
 

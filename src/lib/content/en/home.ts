@@ -7,6 +7,10 @@ export const home: HomeContent = {
 		getHelp: 'Get Help Now',
 		learnMore: 'Learn More'
 	},
+	foundation: {
+		label: 'Our Foundation',
+		heading: 'Rooted in Scripture. Lived in community.'
+	},
 	phases: [
 		{
 			title: 'Phase #1',

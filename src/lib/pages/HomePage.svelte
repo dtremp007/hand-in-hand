@@ -24,7 +24,9 @@
 				{content.hero.subtitle}
 			</p>
 			<div class="mt-12 flex flex-wrap gap-6">
-				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.hero.getHelp}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}
+					>{content.hero.getHelp}</GoldButton
+				>
 				<GoldButton href={localizeHref('/about') as Pathname} variant="outline"
 					>{content.hero.learnMore}</GoldButton
 				>
@@ -32,18 +34,24 @@
 		</SectionFrame>
 
 		<SectionFrame spacing="py-24 md:py-32">
-			<p class="text-center text-xs font-extrabold uppercase tracking-[0.42em] text-gold">Our Foundation</p>
+			<p class="text-center text-xs font-extrabold uppercase tracking-[0.42em] text-gold">
+				{content.foundation.label}
+			</p>
 			<h2 class="mt-6 text-center font-serif text-4xl leading-tight text-paper md:text-5xl">
-				Rooted in Scripture. Lived in community.
+				{content.foundation.heading}
 			</h2>
 
 			<div class="mt-16 grid gap-8 md:grid-cols-2">
 				{#each content.phases as phase, i (phase.title)}
 					<div class="rounded-sm border border-[#2d2b27] bg-ink p-10">
 						<span class="text-5xl font-bold text-gold/80">0{i + 1}</span>
-						<p class="mt-1 text-sm font-bold uppercase tracking-widest text-gold/60">{phase.scripture}</p>
+						<p class="mt-1 text-sm font-bold uppercase tracking-widest text-gold/60">
+							{phase.scripture}
+						</p>
 						<h3 class="mt-6 font-serif text-2xl text-paper">{phase.heading}</h3>
-						<p class="mt-4 whitespace-pre-line text-base leading-relaxed text-muted">{phase.body}</p>
+						<p class="mt-4 whitespace-pre-line text-base leading-relaxed text-muted">
+							{phase.body}
+						</p>
 					</div>
 				{/each}
 			</div>
@@ -136,7 +144,9 @@
 				{content.cta.quote}
 			</p>
 			<div class="mt-10">
-				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}
+					>{content.cta.button}</GoldButton
+				>
 			</div>
 		</SectionFrame>
 	</main>

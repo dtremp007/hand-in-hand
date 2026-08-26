@@ -1,7 +1,8 @@
-export type Locale = 'en' | 'es';
+export type Locale = 'en' | 'es' | 'de';
 
 export type HomeContent = {
 	hero: { title: string; subtitle: string; getHelp: string; learnMore: string };
+	foundation: { label: string; heading: string };
 	phases: { title: string; scripture: string; heading: string; body: string }[];
 	testimony: { title: string; description: string };
 	statistics: string;

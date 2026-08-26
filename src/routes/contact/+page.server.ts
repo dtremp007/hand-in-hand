@@ -1,4 +1,5 @@
 import { fail } from '@sveltejs/kit';
+import { m } from '$lib/paraglide/messages';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
 
@@ -12,7 +13,7 @@ export const actions = {
 
 		if (!name || !churchName || !role || !contactInfo) {
 			return fail(400, {
-				error: 'Please complete the required fields before sending.'
+				error: m.form_error_contact()
 			});
 		}
 

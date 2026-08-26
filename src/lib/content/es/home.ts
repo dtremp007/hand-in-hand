@@ -7,6 +7,10 @@ export const home: HomeContent = {
 		getHelp: 'Busca ayuda',
 		learnMore: 'Conoce m\u00e1s'
 	},
+	foundation: {
+		label: 'Nuestros cimientos',
+		heading: 'Arraigados en las Escrituras. Vividos en comunidad.'
+	},
 	phases: [
 		{
 			title: 'Fase #1',

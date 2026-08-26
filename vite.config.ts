@@ -33,42 +33,48 @@ export default defineConfig({
 					pattern: '/login/:path(.*)?',
 					localized: [
 						['en', '/login/:path(.*)?'],
-						['es', '/login/:path(.*)?']
+						['es', '/login/:path(.*)?'],
+						['de', '/login/:path(.*)?']
 					]
 				},
 				{
 					pattern: '/admin/:path(.*)?',
 					localized: [
 						['en', '/admin/:path(.*)?'],
-						['es', '/admin/:path(.*)?']
+						['es', '/admin/:path(.*)?'],
+						['de', '/admin/:path(.*)?']
 					]
 				},
 				{
 					pattern: '/sitemap.xml',
 					localized: [
 						['en', '/sitemap.xml'],
-						['es', '/sitemap.xml']
+						['es', '/sitemap.xml'],
+						['de', '/sitemap.xml']
 					]
 				},
 				{
 					pattern: '/robots.txt',
 					localized: [
 						['en', '/robots.txt'],
-						['es', '/robots.txt']
+						['es', '/robots.txt'],
+						['de', '/robots.txt']
 					]
 				},
 				{
 					pattern: '/',
 					localized: [
 						['en', '/en'],
-						['es', '/es']
+						['es', '/es'],
+						['de', '/de']
 					]
 				},
 				{
 					pattern: '/:path(.*)?',
 					localized: [
 						['en', '/en/:path(.*)?'],
-						['es', '/es/:path(.*)?']
+						['es', '/es/:path(.*)?'],
+						['de', '/de/:path(.*)?']
 					]
 				}
 			],

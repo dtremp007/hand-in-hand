@@ -21,14 +21,16 @@
 	);
 	let title = $derived(`${seo.title} | ${siteName}`);
 	let canonical = $derived(new URL(pathname, page.url.origin).href);
-	let alternateEn = $derived(
-		new URL(localizeHref(contentPath, { locale: 'en' }), page.url.origin).href
-	);
-	let alternateEs = $derived(
-		new URL(localizeHref(contentPath, { locale: 'es' }), page.url.origin).href
+	let alternateHrefs = $derived(
+		Object.fromEntries(
+			locales.map((loc) => [
+				loc,
+				new URL(localizeHref(contentPath, { locale: loc }), page.url.origin).href
+			])
+		)
 	);
 	let isPrivateRoute = $derived(pathname === '/login' || pathname.startsWith('/admin'));
-	let ogLocale = $derived(locale === 'es' ? 'es_ES' : 'en_CA');
+	let ogLocale = $derived(locale === 'es' ? 'es_ES' : locale === 'de' ? 'de_DE' : 'en_CA');
 
 	let structuredData = $derived(
 		JSON.stringify({
@@ -46,9 +48,10 @@
 	<meta name="description" content={seo.description} />
 	<meta name="robots" content={isPrivateRoute ? 'noindex, nofollow' : 'index, follow'} />
 	<link rel="canonical" href={canonical} />
-	<link rel="alternate" hreflang="en" href={alternateEn} />
-	<link rel="alternate" hreflang="es" href={alternateEs} />
-	<link rel="alternate" hreflang="x-default" href={alternateEn} />
+	{#each locales as loc (loc)}
+		<link rel="alternate" hreflang={loc} href={alternateHrefs[loc]} />
+	{/each}
+	<link rel="alternate" hreflang="x-default" href={alternateHrefs.en} />
 	<link rel="icon" type="image/png" sizes="180x180" href="/favicon.png" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
 	<meta name="theme-color" content="#131313" />

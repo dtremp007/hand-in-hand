@@ -1,0 +1,22 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"nav_home": "Startseite",
+	"nav_get_involved": "Mitmachen",
+	"nav_churches": "Gemeinden",
+	"nav_about": "Über uns",
+	"nav_zoom_schedule": "Zoom-Termine",
+	"nav_get_involved_now": "Mitmachen",
+	"nav_language_to_es": "Español",
+	"nav_language_to_en": "English",
+	"nav_language_to_de": "Deutsch",
+	"nav_language_menu": "Sprache",
+	"nav_toggle_menu": "Menü öffnen",
+	"form_error_get_involved": "Bitte fülle die Pflichtfelder aus und stimme der Vertraulichkeitsvereinbarung zu, bevor du absendest.",
+	"form_error_contact": "Bitte fülle die Pflichtfelder aus, bevor du absendest.",
+	"footer_tagline": "© Hand In Hand Ministry. Ein digitaler Zufluchtsort für den stillen Kampf.",
+	"footer_mission": "Mission",
+	"footer_churches": "Gemeinden",
+	"footer_contact": "Kontakt",
+	"footer_connect": "Verbinden",
+	"footer_zoom_schedule": "Zoom-Termine"
+}
