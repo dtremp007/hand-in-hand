@@ -38,6 +38,22 @@ export default defineConfig({
 					]
 				},
 				{
+					pattern: '/register/:path(.*)?',
+					localized: [
+						['en', '/register/:path(.*)?'],
+						['es', '/register/:path(.*)?'],
+						['de', '/register/:path(.*)?']
+					]
+				},
+				{
+					pattern: '/logout/:path(.*)?',
+					localized: [
+						['en', '/logout/:path(.*)?'],
+						['es', '/logout/:path(.*)?'],
+						['de', '/logout/:path(.*)?']
+					]
+				},
+				{
 					pattern: '/admin/:path(.*)?',
 					localized: [
 						['en', '/admin/:path(.*)?'],
@@ -80,6 +96,8 @@ export default defineConfig({
 			],
 			routeStrategies: [
 				{ match: '/login/:path(.*)?', strategy: ['baseLocale'] },
+				{ match: '/register/:path(.*)?', strategy: ['baseLocale'] },
+				{ match: '/logout/:path(.*)?', strategy: ['baseLocale'] },
 				{ match: '/admin/:path(.*)?', strategy: ['baseLocale'] },
 				{ match: '/api/:path(.*)?', exclude: true },
 				{ match: '/sitemap.xml', exclude: true },

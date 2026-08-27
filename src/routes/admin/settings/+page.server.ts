@@ -5,11 +5,7 @@ import { SITE_SETTINGS_ID, siteSettings } from '$lib/server/db/schema';
 import { getSiteSettings, parseNotificationEmails } from '$lib/server/site-settings';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ locals, url }) => {
-	if (!locals.user) {
-		throw redirect(302, `/login?redirectTo=${encodeURIComponent(url.pathname)}`);
-	}
-
+export const load: PageServerLoad = async () => {
 	const settings = await getSiteSettings();
 
 	return {

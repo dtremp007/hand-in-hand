@@ -36,32 +36,39 @@ export const actions = {
 			});
 		}
 
-		await db.insert(submission).values({
-			kind: 'get_involved',
-			name: `${firstName} ${lastName}`,
-			contactInfo: whatsapp,
-			email,
-			age,
-			language,
-			location,
-			role,
-			partner,
-			message: situation,
-			confirmed
-		});
+		const [created] = await db
+			.insert(submission)
+			.values({
+				kind: 'get_involved',
+				name: `${firstName} ${lastName}`,
+				contactInfo: whatsapp,
+				email,
+				age,
+				language,
+				location,
+				role,
+				partner,
+				message: situation,
+				confirmed
+			})
+			.returning({ id: submission.id });
 
-		await notifyFormRecipientsSafe('get_involved', {
-			name: `${firstName} ${lastName}`,
-			contactInfo: whatsapp,
-			email,
-			age,
-			language,
-			location,
-			role,
-			partner,
-			message: situation,
-			confirmed
-		});
+		await notifyFormRecipientsSafe(
+			'get_involved',
+			{
+				name: `${firstName} ${lastName}`,
+				contactInfo: whatsapp,
+				email,
+				age,
+				language,
+				location,
+				role,
+				partner,
+				message: situation,
+				confirmed
+			},
+			created?.id
+		);
 
 		return { success: true };
 	}

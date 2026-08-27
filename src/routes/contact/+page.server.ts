@@ -19,22 +19,29 @@ export const actions = {
 			});
 		}
 
-		await db.insert(submission).values({
-			kind: 'contact',
-			name,
-			churchName,
-			role,
-			contactInfo,
-			prompt
-		});
+		const [created] = await db
+			.insert(submission)
+			.values({
+				kind: 'contact',
+				name,
+				churchName,
+				role,
+				contactInfo,
+				prompt
+			})
+			.returning({ id: submission.id });
 
-		await notifyFormRecipientsSafe('contact', {
-			name,
-			churchName,
-			role,
-			contactInfo,
-			prompt
-		});
+		await notifyFormRecipientsSafe(
+			'contact',
+			{
+				name,
+				churchName,
+				role,
+				contactInfo,
+				prompt
+			},
+			created?.id
+		);
 
 		return { success: true };
 	}
