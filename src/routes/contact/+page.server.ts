@@ -1,5 +1,6 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { m } from '$lib/paraglide/messages';
+import { localizeHref } from '$lib/paraglide/runtime';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
 import { notifyFormRecipientsSafe } from '$lib/server/email';
@@ -19,23 +20,30 @@ export const actions = {
 			});
 		}
 
-		await db.insert(submission).values({
-			kind: 'contact',
-			name,
-			churchName,
-			role,
-			contactInfo,
-			prompt
-		});
+		const [created] = await db
+			.insert(submission)
+			.values({
+				kind: 'contact',
+				name,
+				churchName,
+				role,
+				contactInfo,
+				prompt
+			})
+			.returning({ id: submission.id });
 
-		await notifyFormRecipientsSafe('contact', {
-			name,
-			churchName,
-			role,
-			contactInfo,
-			prompt
-		});
+		await notifyFormRecipientsSafe(
+			'contact',
+			{
+				name,
+				churchName,
+				role,
+				contactInfo,
+				prompt
+			},
+			created?.id
+		);
 
-		return { success: true };
+		throw redirect(303, `${localizeHref('/submission-success')}?from=contact`);
 	}
 };

@@ -29,7 +29,12 @@
 			])
 		)
 	);
-	let isPrivateRoute = $derived(pathname === '/login' || pathname.startsWith('/admin'));
+	let isPrivateRoute = $derived(
+		pathname === '/login' ||
+			pathname === '/register' ||
+			pathname.startsWith('/admin') ||
+			contentPath === '/submission-success'
+	);
 	let ogLocale = $derived(locale === 'es' ? 'es_ES' : locale === 'de' ? 'de_DE' : 'en_CA');
 
 	let structuredData = $derived(

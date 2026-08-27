@@ -42,7 +42,6 @@ export const getInvolved: GetInvolvedContent = {
 		confidentiality:
 			'Al marcar esta casilla, me comprometo a mantener en total confidencialidad todo lo que se hable dentro de este programa.',
 		checkbox: 'Me comprometo',
-		submit: 'Enviar',
-		success: 'Gracias. Recibimos tu respuesta y haremos seguimiento con cuidado.'
+		submit: 'Enviar'
 	}
 };

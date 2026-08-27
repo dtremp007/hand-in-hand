@@ -1,5 +1,6 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { m } from '$lib/paraglide/messages';
+import { localizeHref } from '$lib/paraglide/runtime';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
 import { notifyFormRecipientsSafe } from '$lib/server/email';
@@ -36,33 +37,40 @@ export const actions = {
 			});
 		}
 
-		await db.insert(submission).values({
-			kind: 'get_involved',
-			name: `${firstName} ${lastName}`,
-			contactInfo: whatsapp,
-			email,
-			age,
-			language,
-			location,
-			role,
-			partner,
-			message: situation,
-			confirmed
-		});
+		const [created] = await db
+			.insert(submission)
+			.values({
+				kind: 'get_involved',
+				name: `${firstName} ${lastName}`,
+				contactInfo: whatsapp,
+				email,
+				age,
+				language,
+				location,
+				role,
+				partner,
+				message: situation,
+				confirmed
+			})
+			.returning({ id: submission.id });
 
-		await notifyFormRecipientsSafe('get_involved', {
-			name: `${firstName} ${lastName}`,
-			contactInfo: whatsapp,
-			email,
-			age,
-			language,
-			location,
-			role,
-			partner,
-			message: situation,
-			confirmed
-		});
+		await notifyFormRecipientsSafe(
+			'get_involved',
+			{
+				name: `${firstName} ${lastName}`,
+				contactInfo: whatsapp,
+				email,
+				age,
+				language,
+				location,
+				role,
+				partner,
+				message: situation,
+				confirmed
+			},
+			created?.id
+		);
 
-		return { success: true };
+		throw redirect(303, `${localizeHref('/submission-success')}?from=get-involved`);
 	}
 };

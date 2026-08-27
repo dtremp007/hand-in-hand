@@ -39,7 +39,7 @@ You will need [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/installa
    cp .env.example .env
    ```
 
-   For local development, set `DATABASE_URL` in `.env` to `file:local.db`. Leave `DATABASE_AUTH_TOKEN` present; a non-empty placeholder such as `local` is sufficient for a local SQLite database. Set `BETTER_AUTH_SECRET` to a private random value of at least 32 characters. Never commit the `.env` file.
+   For local development, set `DATABASE_URL` in `.env` to `file:local.db`. Leave `DATABASE_AUTH_TOKEN` present; a non-empty placeholder such as `local` is sufficient for a local SQLite database. Set `BETTER_AUTH_SECRET` to a private random value of at least 32 characters. Set `ADMIN_INVITE_CODE` to the shared password required for new admin registration. An invite URL looks like `/register?code=YOUR_CODE`. Never commit the `.env` file.
 
 4. Apply the database migrations.
 

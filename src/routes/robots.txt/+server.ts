@@ -1,9 +1,11 @@
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = ({ url }) => {
-const body = `User-agent: *
+	const body = `User-agent: *
 Allow: /
 Disallow: /login
+Disallow: /register
+Disallow: /logout
 Disallow: /admin/
 
 Sitemap: ${url.origin}/sitemap.xml

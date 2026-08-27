@@ -22,7 +22,6 @@ export const contact: ContactContent = {
 				required: false
 			}
 		],
-		submit: 'Iniciar la conversaci\u00f3n',
-		success: 'Gracias. Recibimos tu mensaje y haremos seguimiento.'
+		submit: 'Iniciar la conversaci\u00f3n'
 	}
 };

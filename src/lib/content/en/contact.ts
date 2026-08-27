@@ -12,7 +12,6 @@ export const contact: ContactContent = {
 			{ name: 'contact_info', label: 'Contact Information (required)', rows: 1, required: true },
 			{ name: 'prompt', label: 'What prompted you to reach out?', rows: 4, required: false }
 		],
-		submit: 'Start the Conversation',
-		success: 'Thank you. We received your message and will follow up.'
+		submit: 'Start the Conversation'
 	}
 };

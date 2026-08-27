@@ -17,7 +17,6 @@ export const contact: ContactContent = {
 				required: false
 			}
 		],
-		submit: 'Absenden',
-		success: 'Danke. Wir haben deine Nachricht erhalten und werden uns bei dir melden.'
+		submit: 'Absenden'
 	}
 };

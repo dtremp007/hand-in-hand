@@ -26,6 +26,10 @@ export const seo: SeoContent = {
 		description:
 			'Contact Hand In Hand to discuss confidential support, walking alongside someone, or partnering with your church.'
 	},
+	'/submission-success': {
+		title: 'Message Received',
+		description: 'Thank you. Hand In Hand received your submission and will follow up with care.'
+	},
 	'/zoom-schedule': {
 		title: 'Zoom Schedule',
 		description:

@@ -2,55 +2,37 @@ import { env } from '$env/dynamic/private';
 import { Resend } from 'resend';
 import { getSiteSettings } from '$lib/server/site-settings';
 import {
-	formatSubmissionValue,
-	submissionFieldLabels,
-	submissionKindLabels,
-	type SubmissionKind
-} from '$lib/submission-display';
+	buildNotificationHtml,
+	buildNotificationText,
+	type NotificationEmailInput
+} from '$lib/server/notification-email';
+import { submissionKindLabels, type SubmissionKind } from '$lib/submission-display';
 
 export type { SubmissionKind };
 
-function entries(fields: Record<string, unknown>) {
-	return Object.entries(fields).filter(([, value]) => value !== null && value !== undefined && value !== '');
+function adminOrigin() {
+	if (env.VERCEL_PROJECT_PRODUCTION_URL) {
+		return `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`;
+	}
+
+	return env.ORIGIN?.replace(/\/$/, '') ?? '';
 }
 
-function buildText(kind: SubmissionKind, fields: Record<string, unknown>, receivedAt: Date) {
-	const lines = [
-		`New ${submissionKindLabels[kind]} submission`,
-		`Received: ${receivedAt.toISOString()}`,
-		'',
-		...entries(fields).map(
-			([key, value]) =>
-				`${submissionFieldLabels[key as keyof typeof submissionFieldLabels] ?? key}: ${formatSubmissionValue(value)}`
-		)
-	];
-	return lines.join('\n');
-}
+function adminUrlFor(submissionId?: string) {
+	const origin = adminOrigin();
+	if (!origin) {
+		return undefined;
+	}
 
-function buildHtml(kind: SubmissionKind, fields: Record<string, unknown>, receivedAt: Date) {
-	const rows = entries(fields)
-		.map(
-			([key, value]) =>
-				`<tr><th scope="row">${escapeHtml(submissionFieldLabels[key as keyof typeof submissionFieldLabels] ?? key)}</th><td>${escapeHtml(formatSubmissionValue(value))}</td></tr>`
-		)
-		.join('');
-
-	return `<p>New <strong>${submissionKindLabels[kind]}</strong> submission</p>
-<p>Received ${escapeHtml(receivedAt.toISOString())}</p>
-<table>${rows}</table>`;
-}
-
-function escapeHtml(value: string) {
-	return value
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
+	return submissionId
+		? `${origin}/admin/submissions/${submissionId}`
+		: `${origin}/admin/submissions`;
 }
 
 export async function notifyFormRecipients(
 	kind: SubmissionKind,
-	fields: Record<string, unknown>
+	fields: Record<string, unknown>,
+	submissionId?: string
 ) {
 	const apiKey = env.RESEND_API_KEY;
 	const from = env.RESEND_FROM;
@@ -67,14 +49,19 @@ export async function notifyFormRecipients(
 		return;
 	}
 
-	const receivedAt = new Date();
+	const payload: NotificationEmailInput = {
+		kind,
+		fields,
+		receivedAt: new Date(),
+		adminUrl: adminUrlFor(submissionId)
+	};
 	const resend = new Resend(apiKey);
 	const { error } = await resend.emails.send({
 		from,
 		to,
 		subject: `New ${submissionKindLabels[kind]} submission`,
-		text: buildText(kind, fields, receivedAt),
-		html: buildHtml(kind, fields, receivedAt)
+		text: buildNotificationText(payload),
+		html: buildNotificationHtml(payload)
 	});
 
 	if (error) {
@@ -84,10 +71,11 @@ export async function notifyFormRecipients(
 
 export async function notifyFormRecipientsSafe(
 	kind: SubmissionKind,
-	fields: Record<string, unknown>
+	fields: Record<string, unknown>,
+	submissionId?: string
 ) {
 	try {
-		await notifyFormRecipients(kind, fields);
+		await notifyFormRecipients(kind, fields, submissionId);
 	} catch (error) {
 		console.error('Failed to send form notification email', error);
 	}
