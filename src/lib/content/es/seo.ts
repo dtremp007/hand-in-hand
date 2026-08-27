@@ -26,6 +26,11 @@ export const seo: SeoContent = {
 		description:
 			'Contacta a Hand In Hand para hablar sobre apoyo confidencial, caminar junto a alguien o asociarte con tu iglesia.'
 	},
+	'/submission-success': {
+		title: 'Mensaje recibido',
+		description:
+			'Gracias. Hand In Hand recibió tu envío y hará seguimiento con cuidado.'
+	},
 	'/zoom-schedule': {
 		title: 'Horario Zoom',
 		description:

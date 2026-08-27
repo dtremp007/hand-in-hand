@@ -3,7 +3,7 @@
 	import { getContent, type Locale } from '$lib/content';
 	import { getLocale } from '$lib/paraglide/runtime';
 
-	type FormResult = { success?: boolean; error?: string } | null | undefined;
+	type FormResult = { error?: string } | null | undefined;
 
 	let { form }: { form?: FormResult } = $props();
 
@@ -19,13 +19,7 @@
 
 		<section>
 			<form class="space-y-8" method="post">
-				{#if form?.success}
-					<p
-						class="border border-gold/40 bg-gold/10 p-5 text-center font-serif text-2xl text-paper"
-					>
-						{content.form.success}
-					</p>
-				{:else if form?.error}
+				{#if form?.error}
 					<p class="border border-red-400/40 bg-red-950/30 p-5 text-center text-sm text-red-100">
 						{form.error}
 					</p>

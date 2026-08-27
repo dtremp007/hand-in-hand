@@ -44,7 +44,6 @@ export const getInvolved: GetInvolvedContent = {
 		confidentiality:
 			'Durch Anklicken dieses Kästchens stimme ich zu, alles, was im Rahmen dieses Programms besprochen wird, streng vertraulich zu behandeln.',
 		checkbox: 'Ich stimme zu',
-		submit: 'Absenden',
-		success: 'Danke. Wir haben deine Antwort erhalten und werden uns sorgfältig bei dir melden.'
+		submit: 'Absenden'
 	}
 };

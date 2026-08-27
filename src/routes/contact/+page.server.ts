@@ -1,5 +1,6 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { m } from '$lib/paraglide/messages';
+import { localizeHref } from '$lib/paraglide/runtime';
 import { db } from '$lib/server/db';
 import { submission } from '$lib/server/db/schema';
 import { notifyFormRecipientsSafe } from '$lib/server/email';
@@ -43,6 +44,6 @@ export const actions = {
 			created?.id
 		);
 
-		return { success: true };
+		throw redirect(303, `${localizeHref('/submission-success')}?from=contact`);
 	}
 };

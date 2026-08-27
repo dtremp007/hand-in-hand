@@ -51,7 +51,6 @@ export type GetInvolvedContent = {
 		confidentiality: string;
 		checkbox: string;
 		submit: string;
-		success: string;
 	};
 };
 
@@ -61,8 +60,15 @@ export type ContactContent = {
 	form: {
 		fields: { name: string; label: string; rows: number; required: boolean }[];
 		submit: string;
-		success: string;
 	};
+};
+
+export type SubmissionSuccessContent = {
+	title: string;
+	body: string;
+	contactBody: string;
+	getInvolvedBody: string;
+	homeCta: string;
 };
 
 export type ZoomScheduleContent = {
@@ -101,6 +107,7 @@ export type SiteContent = {
 	about: AboutContent;
 	getInvolved: GetInvolvedContent;
 	contact: ContactContent;
+	submissionSuccess: SubmissionSuccessContent;
 	zoomSchedule: ZoomScheduleContent;
 	churches: ChurchesContent;
 	processSteps: ProcessStepsContent;

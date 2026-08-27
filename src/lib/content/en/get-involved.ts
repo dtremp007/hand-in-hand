@@ -42,7 +42,6 @@ export const getInvolved: GetInvolvedContent = {
 		confidentiality:
 			'By checking this box, I agree to remain in full confidentiality of anything that is said within this program.',
 		checkbox: 'I Agree',
-		submit: 'Submit',
-		success: 'Thank you. We received your response and will follow up with care.'
+		submit: 'Submit'
 	}
 };
