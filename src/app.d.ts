@@ -14,6 +14,23 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		__onTurnstileLoad?: () => void;
+		turnstile?: {
+			render: (
+				element: HTMLElement,
+				options: {
+					sitekey: string;
+					action?: string;
+					theme?: 'light' | 'dark' | 'auto';
+					language?: string;
+				}
+			) => string;
+			reset: (widgetId: string) => void;
+			remove: (widgetId: string) => void;
+		};
+	}
 }
 
 export {};

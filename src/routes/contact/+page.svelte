@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ContactPage from '$lib/pages/ContactPage.svelte';
 
-	let { form } = $props();
+	let { data, form } = $props();
 </script>
 
-<ContactPage {form} />
+<ContactPage {form} formStartedAt={data.formStartedAt} turnstileSiteKey={data.turnstileSiteKey} />

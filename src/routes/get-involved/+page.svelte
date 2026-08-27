@@ -1,7 +1,11 @@
 <script lang="ts">
 	import GetInvolvedPage from '$lib/pages/GetInvolvedPage.svelte';
 
-	let { form } = $props();
+	let { data, form } = $props();
 </script>
 
-<GetInvolvedPage {form} />
+<GetInvolvedPage
+	{form}
+	formStartedAt={data.formStartedAt}
+	turnstileSiteKey={data.turnstileSiteKey}
+/>

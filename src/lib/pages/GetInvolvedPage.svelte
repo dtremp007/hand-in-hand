@@ -1,17 +1,29 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import PageShell from '$lib/components/PageShell.svelte';
 	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
+	import PublicFormGuard from '$lib/components/PublicFormGuard.svelte';
 	import SquareList from '$lib/components/SquareList.svelte';
 	import { getContent, type Locale } from '$lib/content';
 	import { getLocale } from '$lib/paraglide/runtime';
 
 	type FormResult = { error?: string } | null | undefined;
 
-	let { form }: { form?: FormResult } = $props();
+	let {
+		form,
+		formStartedAt,
+		turnstileSiteKey
+	}: {
+		form?: FormResult;
+		formStartedAt: number;
+		turnstileSiteKey: string;
+	} = $props();
 
 	const site = $derived(getContent(getLocale() as Locale));
 	const content = $derived(site.getInvolved);
 	const processSteps = $derived(site.processSteps);
+	const locale = $derived(getLocale());
+	let resetTurnstile = $state(() => {});
 </script>
 
 <PageShell active="get-involved">
@@ -52,7 +64,21 @@
 				<p class="mt-4 font-serif text-xl italic text-muted">{content.form.subtitle}</p>
 			</div>
 
-			<form class="space-y-10" method="post">
+			<form
+				class="relative space-y-10"
+				method="post"
+				use:enhance={() => {
+					return async ({ result, update }) => {
+						try {
+							await update();
+						} finally {
+							if (result.type !== 'redirect') {
+								resetTurnstile();
+							}
+						}
+					};
+				}}
+			>
 				{#if form?.error}
 					<p class="border border-red-400/40 bg-red-950/30 p-5 text-center text-sm text-red-100">
 						{form.error}
@@ -237,6 +263,14 @@
 						<span class="mt-2 block text-paper">{content.form.checkbox}</span>
 					</span>
 				</label>
+
+				<PublicFormGuard
+					action="get-involved"
+					siteKey={turnstileSiteKey}
+					{formStartedAt}
+					language={locale}
+					bind:reset={resetTurnstile}
+				/>
 
 				<div class="pt-4 text-center">
 					<button
