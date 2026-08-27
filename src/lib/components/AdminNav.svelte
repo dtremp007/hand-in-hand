@@ -20,11 +20,17 @@
 	>
 		<a
 			href={resolve('/admin/submissions')}
-			class="font-serif text-xl font-semibold tracking-tight text-gold"
+			class="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
 		>
-			Hand In Hand
+			<img
+				src="/images/logo-gold.webp"
+				alt="Hand In Hand"
+				width="849"
+				height="208"
+				class="h-8 w-auto"
+			/>
 			<span
-				class="ml-2 font-sans text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-outline"
+				class="font-sans text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-outline"
 			>
 				Admin
 			</span>

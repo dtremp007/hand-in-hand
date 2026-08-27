@@ -8,7 +8,14 @@ export const about: AboutContent = {
 			'Hand-in-Hand Ministry wurde ins Leben gerufen, um Männern dabei zu helfen, Freiheit von Pornografie zu erlangen. Unsere Mission ist es, Menschen zu ermutigen, eine Beziehung zu Gott aufzubauen, in der sie Freiheit finden KÖNNEN. Unser Fokus ist zweigeteilt. Der erste Teil besteht darin, dass wir die Notwendigkeit einer Beziehung zu Gott und insbesondere zu Jesus Christus erkennen. Wenn wir eine dauerhafte und bedeutungsvolle Beziehung zu ihm haben, wissen wir, dass Pornografie in unserem Leben keinen Platz mehr haben wird. Der zweite Schwerpunkt besteht darin, die Hoffnung, die wir in ihm haben, an die Menschen in unserem Umfeld weiterzugeben.',
 			'Im Wesentlichen möchten wir, dass Männer ihre Hand in Gottes Hand legen, ihm voll und ganz vertrauen und sie niemals loslassen. Gleichzeitig legen wir unsere Hand in die Hand eines Suchenden, der zu kämpfen hat, und helfen ihm, Freiheit zu finden, indem wir eine verbindliche Beziehung zu Jesus Christus pflegen.',
 			'Als Männer können wir die weltlichen Begierden überwinden, indem wir Hand in Hand mit Gott gehen, und wir verkörpern die Liebe Christi, indem wir Hand in Hand mit einem anderen gehen, dem wir helfen können.'
-		]
+		],
+		diagram: {
+			src: '/images/cross-german.webp',
+			width: 1024,
+			height: 1536,
+			alt: 'Ein Holzkreuz auf einer Wiese mit dem Titel Unser Kreuz. Die deutschen Beschriftungen zeigen das Zugehen auf Freunde, Familie und Gemeinde, den Umgang mit Problemen, das Gebet als unser Sprechen mit Gott und die Bibel als Gottes Sprechen mit uns.',
+			caption: 'Lukas 9,23'
+		}
 	},
 	whoWeAre: {
 		title: 'Die Menschen hinter diesem Werk:',

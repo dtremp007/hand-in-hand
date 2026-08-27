@@ -35,8 +35,16 @@
 	<div class="flex items-center justify-between gap-4">
 		<a
 			href={localizeHref('/') as Pathname}
-			class="font-serif text-xl font-semibold tracking-tight text-gold md:text-2xl">Hand In Hand</a
+			class="shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
 		>
+			<img
+				src="/images/logo-gold.webp"
+				alt="Hand In Hand Ministry"
+				width="849"
+				height="208"
+				class="h-9 w-auto md:h-11"
+			/>
+		</a>
 
 		<div class="hidden flex-1 items-center justify-center gap-8 xl:flex">
 			{#each links as link (link.key)}

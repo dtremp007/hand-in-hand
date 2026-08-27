@@ -8,7 +8,14 @@ export const about: AboutContent = {
 			'Hand-In-Hand Ministry existe para ayudar a los hombres a liberarse de la pornograf\u00eda. Nuestra misi\u00f3n consiste en animar a las personas a establecer una relaci\u00f3n con Dios, en la que puedan encontrar la libertad. Nuestro enfoque es doble. La primera parte consiste en comprender la necesidad de Dios y, m\u00e1s concretamente, la necesidad de tener una relaci\u00f3n con Jesucristo. Si tenemos una relaci\u00f3n duradera y significativa con \u00c9l, sabemos que la pornograf\u00eda no tendr\u00e1 lugar en nuestras vidas. La segunda parte de nuestro enfoque consiste en transmitir la esperanza que tenemos en \u00c9l a quienes nos rodean.',
 			'En esencia, queremos ver a los hombres poner su mano en la de Dios, confiando plenamente en \u00c9l y sin soltarla nunca. Al mismo tiempo, ponemos nuestra mano en la de quien lucha y lo ayudamos a encontrar la libertad al cultivar una relaci\u00f3n comprometida con nuestro Se\u00f1or Jesucristo.',
 			'Como hombres, podemos vencer los deseos mundanos al caminar de la mano de Dios y mostrar el amor de Cristo ayudando a otros.'
-		]
+		],
+		diagram: {
+			src: '/images/cross-spanish.webp',
+			width: 1122,
+			height: 1402,
+			alt: 'Una cruz de madera en un campo, titulada Nuestra Cruz. El brazo horizontal alcanza a amigos, familia e iglesia de un lado, y trata con problemas del otro. El brazo vertical es la oraci\u00f3n, nosotros hablando con Dios, y la Biblia, Dios hablando con nosotros.',
+			caption: 'Lucas 9:23'
+		}
 	},
 	whoWeAre: {
 		title: 'LOS QUE EST\u00c1N DETR\u00c1S DE ESTO:',

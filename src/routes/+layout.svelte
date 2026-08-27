@@ -43,6 +43,7 @@
 			'@type': 'Organization',
 			name: siteName,
 			url: page.url.origin,
+			logo: new URL('/images/logo-gold.webp', page.url.origin).href,
 			description: defaultDescription
 		})
 	);

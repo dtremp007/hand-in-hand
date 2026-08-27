@@ -8,7 +8,14 @@ export const about: AboutContent = {
 			'Hand-In-Hand Ministry exists in an effort to help men find freedom from Pornography. Our mission is to encourage individuals to establish a relationship with God, in which they CAN find freedom. Our focus is two-fold. The first part is that we understand the necessity of God, and more specifically, a relationship with Jesus Christ. If we have a lasting and meaningful relationship with Him, we know that no amount of pornography will have room to exist within our lives. The second part of our focus is to bring the hope that we have in Him to those around us.',
 			'In essence, we want to see men place their hand in God\u2019s hand, trusting Him fully and never letting go. Simultaneously, we place our hand in the hand of a Seeker who struggles, and help them to find freedom by nurturing a committed relationship with our Lord Jesus Christ.',
 			'As men, we can conquer the worldly lusts, by walking Hand-In-Hand with God, and we exemplify Christ\u2019s love by walking Hand-In-Hand with another whom we may help.'
-		]
+		],
+		diagram: {
+			src: '/images/cross-english.webp',
+			width: 771,
+			height: 1000,
+			alt: 'A wooden cross in a field, titled Our Cross. The horizontal beam reaches toward friends, family, and church on one side and dealing with issues on the other. The vertical beam is prayer, us talking to God, and Scripture, God talking to us.',
+			caption: 'Luke 9:23'
+		}
 	},
 	whoWeAre: {
 		title: 'The Ones Behind This:',

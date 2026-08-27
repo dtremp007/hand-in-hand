@@ -10,8 +10,16 @@
 	<div class="space-y-4">
 		<a
 			href={localizeHref('/') as Pathname}
-			class="font-serif text-xl text-gold">Hand In Hand Ministry</a
+			class="inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
 		>
+			<img
+				src="/images/logo-gold.webp"
+				alt="Hand In Hand Ministry"
+				width="849"
+				height="208"
+				class="h-10 w-auto md:h-12"
+			/>
+		</a>
 		<p class="max-w-md text-xs uppercase tracking-[0.18em] text-gray-500">
 			{m.footer_tagline()}
 		</p>

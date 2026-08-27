@@ -15,7 +15,12 @@ export type HomeContent = {
 };
 
 export type AboutContent = {
-	mission: { title: string; subtitle: string; paragraphs: string[] };
+	mission: {
+		title: string;
+		subtitle: string;
+		paragraphs: string[];
+		diagram: { src: string; width: number; height: number; alt: string; caption: string };
+	};
 	whoWeAre: { title: string; intro: string; dedication: string };
 	bob: { name: string; role: string; bio: string };
 	acknowledgements: { title: string; intro: string; items: string[] };

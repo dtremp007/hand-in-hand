@@ -18,10 +18,33 @@
 			<p class="mt-4 font-serif text-4xl leading-tight md:text-6xl">{content.mission.subtitle}</p>
 		</section>
 
-		<section class="mb-24 space-y-10">
-			{#each content.mission.paragraphs as paragraph, index (index)}
-				<p class="text-xl leading-relaxed text-muted md:text-2xl">{paragraph}</p>
-			{/each}
+		<section class="mb-24">
+			<div
+				class="grid gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(20rem,36rem)] xl:grid-rows-[auto_1fr] xl:items-start xl:gap-x-16 xl:gap-y-10"
+			>
+				<p class="max-w-prose text-xl leading-relaxed text-muted md:text-2xl">
+					{content.mission.paragraphs[0]}
+				</p>
+				<figure class="mx-auto w-full max-w-xl xl:col-start-2 xl:row-span-2 xl:mx-0 xl:max-w-none">
+					<img
+						src={content.mission.diagram.src}
+						alt={content.mission.diagram.alt}
+						width={content.mission.diagram.width}
+						height={content.mission.diagram.height}
+						class="h-auto w-full border border-[#4e4639]/50"
+					/>
+					<figcaption
+						class="mt-4 text-center text-xs font-extrabold uppercase tracking-[0.22em] text-outline"
+					>
+						{content.mission.diagram.caption}
+					</figcaption>
+				</figure>
+				<div class="max-w-prose space-y-10">
+					{#each content.mission.paragraphs.slice(1) as paragraph, index (index)}
+						<p class="text-xl leading-relaxed text-muted md:text-2xl">{paragraph}</p>
+					{/each}
+				</div>
+			</div>
 		</section>
 
 		<section class="mb-24 border-y border-[#4e4639]/40 py-16">
