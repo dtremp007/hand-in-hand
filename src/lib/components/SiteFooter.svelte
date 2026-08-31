@@ -48,5 +48,9 @@
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
 			href={localizeHref('/get-involved') as Pathname}>{m.footer_connect()}</a
 		>
+		<a
+			class="transition hover:text-gold hover:underline hover:underline-offset-8"
+			href={localizeHref('/admin') as Pathname}>{m.footer_admin()}</a
+		>
 	</div>
 </footer>

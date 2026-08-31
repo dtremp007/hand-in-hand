@@ -4,7 +4,10 @@
 	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
 	import PublicFormGuard from '$lib/components/PublicFormGuard.svelte';
 	import SquareList from '$lib/components/SquareList.svelte';
+	import SubmitButton from '$lib/components/SubmitButton.svelte';
 	import { getContent, type Locale } from '$lib/content';
+	import { withPending } from '$lib/form-pending';
+	import { m } from '$lib/paraglide/messages';
 	import { getLocale } from '$lib/paraglide/runtime';
 
 	type FormResult = { error?: string } | null | undefined;
@@ -24,6 +27,7 @@
 	const processSteps = $derived(site.processSteps);
 	const locale = $derived(getLocale());
 	let resetTurnstile = $state(() => {});
+	let submitting = $state(false);
 </script>
 
 <PageShell active="get-involved">
@@ -67,17 +71,22 @@
 			<form
 				class="relative space-y-10"
 				method="post"
-				use:enhance={() => {
-					return async ({ result, update }) => {
-						try {
-							await update();
-						} finally {
-							if (result.type !== 'redirect') {
-								resetTurnstile();
+				use:enhance={withPending(
+					(pending) => {
+						submitting = pending;
+					},
+					() => {
+						return async ({ result, update }) => {
+							try {
+								await update();
+							} finally {
+								if (result.type !== 'redirect') {
+									resetTurnstile();
+								}
 							}
-						}
-					};
-				}}
+						};
+					}
+				)}
 			>
 				{#if form?.error}
 					<p class="border border-red-400/40 bg-red-950/30 p-5 text-center text-sm text-red-100">
@@ -273,12 +282,9 @@
 				/>
 
 				<div class="pt-4 text-center">
-					<button
-						class="w-full bg-gold px-10 py-5 text-xs font-extrabold uppercase tracking-[0.22em] text-gold-deep transition hover:opacity-90 md:w-auto"
-						type="submit"
-					>
+					<SubmitButton {submitting} busyLabel={m.form_sending()} class="w-full md:w-auto">
 						{content.form.submit}
-					</button>
+					</SubmitButton>
 				</div>
 			</form>
 		</section>

@@ -19,5 +19,8 @@
 	"footer_churches": "Gemeinden",
 	"footer_contact": "Kontakt",
 	"footer_connect": "Verbinden",
-	"footer_zoom_schedule": "Zoom-Termine"
+	"footer_zoom_schedule": "Zoom-Termine",
+	"footer_admin": "Admin",
+	"form_sending": "Wird gesendet",
+	"form_saving": "Wird gespeichert"
 }

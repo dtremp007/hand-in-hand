@@ -19,5 +19,8 @@
 	"footer_churches": "Churches",
 	"footer_contact": "Contact",
 	"footer_connect": "Connect",
-	"footer_zoom_schedule": "Zoom Schedule"
+	"footer_zoom_schedule": "Zoom Schedule",
+	"footer_admin": "Admin",
+	"form_sending": "Sending",
+	"form_saving": "Saving"
 }

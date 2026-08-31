@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Pathname } from '$app/types';
+	import HeaderPill from '$lib/components/HeaderPill.svelte';
 	import { page } from '$app/state';
 	import { m } from '$lib/paraglide/messages';
 	import { getLocale, locales, localizeHref } from '$lib/paraglide/runtime';
@@ -46,18 +47,16 @@
 </script>
 
 <div bind:this={root} class="relative {stretch ? 'w-full' : ''}">
-	<button
-		type="button"
+	<HeaderPill
+		variant="outline"
+		{stretch}
 		onclick={toggle}
 		aria-expanded={open}
 		aria-haspopup="menu"
 		aria-label={m.nav_language_menu()}
-		class="rounded-full border border-gold/50 px-5 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold transition hover:bg-gold hover:text-gold-deep {stretch
-			? 'w-full px-4 py-2.5'
-			: ''}"
 	>
 		{currentLabel}
-	</button>
+	</HeaderPill>
 
 	{#if open}
 		<ul

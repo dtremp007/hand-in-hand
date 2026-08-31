@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import SubmitButton from '$lib/components/SubmitButton.svelte';
+	import { withPending } from '$lib/form-pending';
+	import { m } from '$lib/paraglide/messages';
 	import type { ActionData, PageData } from './$types';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();
 
 	const emailsValue = $derived(form?.notificationEmails ?? data.notificationEmails);
 	const emailsPlaceholder = 'person@example.com\nanother@example.com';
+	let submitting = $state(false);
 </script>
 
 <main class="mx-auto w-full max-w-7xl flex-grow px-6 py-12 md:px-12 md:py-16">
@@ -16,7 +20,13 @@
 		</p>
 	</section>
 
-	<form class="max-w-2xl space-y-8" method="post" use:enhance>
+	<form
+		class="max-w-2xl space-y-8"
+		method="post"
+		use:enhance={withPending((pending) => {
+			submitting = pending;
+		})}
+	>
 		{#if form?.success}
 			<p class="border border-gold/40 bg-gold/10 p-5 font-serif text-2xl text-paper">
 				Notification emails saved.
@@ -38,11 +48,6 @@
 			></textarea>
 		</label>
 
-		<button
-			class="bg-gold px-10 py-5 text-xs font-extrabold uppercase tracking-[0.22em] text-gold-deep"
-			type="submit"
-		>
-			Save
-		</button>
+		<SubmitButton {submitting} busyLabel={m.form_saving()}>Save</SubmitButton>
 	</form>
 </main>

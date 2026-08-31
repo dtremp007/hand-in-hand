@@ -19,5 +19,8 @@
 	"footer_churches": "Iglesias",
 	"footer_contact": "Contacto",
 	"footer_connect": "Conectar",
-	"footer_zoom_schedule": "Horario Zoom"
+	"footer_zoom_schedule": "Horario Zoom",
+	"footer_admin": "Admin",
+	"form_sending": "Enviando",
+	"form_saving": "Guardando"
 }

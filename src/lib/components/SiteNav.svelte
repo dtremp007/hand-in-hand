@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Pathname } from '$app/types';
 	import LanguageMenu from '$lib/components/LanguageMenu.svelte';
+	import HeaderPill from '$lib/components/HeaderPill.svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { localizeHref } from '$lib/paraglide/runtime';
 
@@ -63,12 +64,9 @@
 
 		<div class="hidden items-center gap-2.5 xl:flex">
 			<LanguageMenu />
-			<a
-				href={localizeHref('/get-involved') as Pathname}
-				class="rounded-full border border-gold/40 bg-gold px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold lg:px-8"
-			>
+			<HeaderPill href={localizeHref('/get-involved') as Pathname}>
 				{m.nav_get_involved_now()}
-			</a>
+			</HeaderPill>
 		</div>
 
 		<button
@@ -117,13 +115,13 @@
 				</a>
 			{/each}
 			<div class="mt-4 flex w-full max-w-xs flex-col items-stretch gap-2.5">
-				<a
+				<HeaderPill
 					href={localizeHref('/get-involved') as Pathname}
+					stretch
 					onclick={() => (open = false)}
-					class="rounded-full border border-gold/40 bg-gold px-4 py-3 text-center text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-gold-deep transition hover:bg-transparent hover:text-gold"
 				>
 					{m.nav_get_involved_now()}
-				</a>
+				</HeaderPill>
 				<LanguageMenu stretch />
 			</div>
 		</div>
