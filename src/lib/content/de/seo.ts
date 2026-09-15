@@ -35,5 +35,13 @@ export const seo: SeoContent = {
 		title: 'Zoom-Termine',
 		description:
 			'Nimm zweimal im Monat an den Zoom-Treffen von Hand In Hand Ministry teil: Zeugnisse, Fragen und Antworten, und Gemeinschaft.'
+	},
+	'/login': {
+		title: 'Anmelden',
+		description: 'Melde dich im privaten Hand-In-Hand-Administrationsbereich an.'
+	},
+	'/register': {
+		title: 'Registrieren',
+		description: 'Erstelle mit einem Einladungscode ein privates Hand-In-Hand-Administratorkonto.'
 	}
 };

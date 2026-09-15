@@ -19,8 +19,9 @@
 	let seo = $derived(
 		getContent(locale).seo[contentPath] ?? { title: siteName, description: defaultDescription }
 	);
-	let title = $derived(`${seo.title} | ${siteName}`);
+	let title = $derived(seo.title === siteName ? siteName : `${seo.title} | ${siteName}`);
 	let canonical = $derived(new URL(pathname, page.url.origin).href);
+	let shareImage = $derived(new URL('/images/logo-gold.webp', page.url.origin).href);
 	let alternateHrefs = $derived(
 		Object.fromEntries(
 			locales.map((loc) => [
@@ -40,11 +41,25 @@
 	let structuredData = $derived(
 		JSON.stringify({
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
-			name: siteName,
-			url: page.url.origin,
-			logo: new URL('/images/logo-gold.webp', page.url.origin).href,
-			description: defaultDescription
+			'@graph': [
+				{
+					'@type': 'Organization',
+					'@id': `${page.url.origin}/#organization`,
+					name: siteName,
+					url: page.url.origin,
+					logo: shareImage,
+					description: defaultDescription
+				},
+				{
+					'@type': 'WebSite',
+					'@id': `${page.url.origin}/#website`,
+					name: siteName,
+					url: page.url.origin,
+					inLanguage: locale,
+					description: defaultDescription,
+					publisher: { '@id': `${page.url.origin}/#organization` }
+				}
+			]
 		})
 	);
 </script>
@@ -67,11 +82,24 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={seo.description} />
 	<meta property="og:url" content={canonical} />
+	<meta property="og:image" content={shareImage} />
+	<meta property="og:image:alt" content="{siteName} logo" />
 	<meta property="og:locale" content={ogLocale} />
+	{#if locale !== 'en'}
+		<meta property="og:locale:alternate" content="en_CA" />
+	{/if}
+	{#if locale !== 'es'}
+		<meta property="og:locale:alternate" content="es_ES" />
+	{/if}
+	{#if locale !== 'de'}
+		<meta property="og:locale:alternate" content="de_DE" />
+	{/if}
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={seo.description} />
+	<meta name="twitter:image" content={shareImage} />
+	<meta name="twitter:image:alt" content="{siteName} logo" />
 
 	{@html `<script type="application/ld+json">${structuredData}<\/script>`}
 </svelte:head>
