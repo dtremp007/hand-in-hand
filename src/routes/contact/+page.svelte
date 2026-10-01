@@ -1,7 +1,3 @@
 <script lang="ts">
-	import ContactPage from '$lib/pages/ContactPage.svelte';
-
-	let { data, form } = $props();
+	// Redirect handled in +page.server.ts
 </script>
-
-<ContactPage {form} formStartedAt={data.formStartedAt} turnstileSiteKey={data.turnstileSiteKey} />

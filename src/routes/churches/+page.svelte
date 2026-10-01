@@ -1,5 +1,3 @@
 <script lang="ts">
-	import ChurchesPage from '$lib/pages/ChurchesPage.svelte';
+	// Redirect handled in +page.server.ts
 </script>
-
-<ChurchesPage />

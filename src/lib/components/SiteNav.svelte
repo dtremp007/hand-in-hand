@@ -15,13 +15,7 @@
 			label: m.nav_get_involved(),
 			key: 'get-involved'
 		},
-		{ href: localizeHref('/churches') as Pathname, label: m.nav_churches(), key: 'churches' },
-		{ href: localizeHref('/about') as Pathname, label: m.nav_about(), key: 'about' },
-		{
-			href: localizeHref('/zoom-schedule') as Pathname,
-			label: m.nav_zoom_schedule(),
-			key: 'zoom-schedule'
-		}
+		{ href: localizeHref('/about') as Pathname, label: m.nav_about(), key: 'about' }
 	]);
 </script>
 

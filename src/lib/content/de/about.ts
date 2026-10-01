@@ -41,6 +41,6 @@ export const about: AboutContent = {
 		]
 	},
 	cta: {
-		button: 'Kontakt aufnehmen'
+		button: 'Mitmachen'
 	}
 };

@@ -1,6 +1,6 @@
 import { env } from '$env/dynamic/private';
 
-export type PublicFormAction = 'contact' | 'get-involved';
+export type PublicFormAction = 'get-involved';
 
 const MIN_FILL_MS = 3_000;
 const MAX_TOKEN_LENGTH = 2_048;

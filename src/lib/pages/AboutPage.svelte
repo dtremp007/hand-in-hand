@@ -79,7 +79,7 @@
 
 		<section class="text-center">
 			<div class="mt-10">
-				<GoldButton href={localizeHref('/contact') as Pathname}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.cta.button}</GoldButton>
 			</div>
 		</section>
 	</main>

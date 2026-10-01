@@ -59,39 +59,11 @@ export type GetInvolvedContent = {
 	};
 };
 
-export type ContactContent = {
-	title: string;
-	subtitle: string;
-	form: {
-		fields: { name: string; label: string; rows: number; required: boolean }[];
-		submit: string;
-	};
-};
-
 export type SubmissionSuccessContent = {
 	title: string;
 	body: string;
-	contactBody: string;
 	getInvolvedBody: string;
 	homeCta: string;
-};
-
-export type ZoomScheduleContent = {
-	title: string;
-	description: string;
-	hope: string;
-	noEvents: string;
-	cta: string;
-};
-
-export type ChurchesContent = {
-	title: string;
-	subtitle: string[];
-	focus: { title: string; intro: string; items: string[] };
-	boundaries: { title: string; intro: string; items: string[] };
-	trust: { label: string; quote: string };
-	howItWorks: { title: string; items: string[] };
-	cta: { quote: string; button: string };
 };
 
 export type SeoContent = Record<
@@ -111,10 +83,7 @@ export type SiteContent = {
 	home: HomeContent;
 	about: AboutContent;
 	getInvolved: GetInvolvedContent;
-	contact: ContactContent;
 	submissionSuccess: SubmissionSuccessContent;
-	zoomSchedule: ZoomScheduleContent;
-	churches: ChurchesContent;
 	processSteps: ProcessStepsContent;
 	seo: SeoContent;
 };

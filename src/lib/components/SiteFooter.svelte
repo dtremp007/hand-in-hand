@@ -34,18 +34,6 @@
 		>
 		<a
 			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localizeHref('/churches') as Pathname}>{m.footer_churches()}</a
-		>
-		<a
-			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localizeHref('/zoom-schedule') as Pathname}>{m.footer_zoom_schedule()}</a
-		>
-		<a
-			class="transition hover:text-gold hover:underline hover:underline-offset-8"
-			href={localizeHref('/contact') as Pathname}>{m.footer_contact()}</a
-		>
-		<a
-			class="transition hover:text-gold hover:underline hover:underline-offset-8"
 			href={localizeHref('/get-involved') as Pathname}>{m.footer_connect()}</a
 		>
 		<a

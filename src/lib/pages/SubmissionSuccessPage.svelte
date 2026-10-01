@@ -8,13 +8,7 @@
 
 	const content = $derived(getContent(getLocale() as Locale).submissionSuccess);
 	const from = $derived(page.url.searchParams.get('from'));
-	const body = $derived(
-		from === 'contact'
-			? content.contactBody
-			: from === 'get-involved'
-				? content.getInvolvedBody
-				: content.body
-	);
+	const body = $derived(from === 'get-involved' ? content.getInvolvedBody : content.body);
 </script>
 
 <PageShell>

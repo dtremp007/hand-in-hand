@@ -16,26 +16,12 @@ export const seo: SeoContent = {
 		description:
 			'Ob du Freiheit suchst oder bereit bist, mit jemand anderem zu gehen: Mach den ersten Schritt zu vertraulicher, im Glauben verwurzelter Unterstützung.'
 	},
-	'/churches': {
-		title: 'Unterstützung für Gemeinden',
-		description:
-			'Hand In Hand arbeitet an der Seite von Gemeinden und bietet gezielte, vertrauliche Eins-zu-eins-Unterstützung, ohne die Gemeindeleitung zu ersetzen.'
-	},
-	'/contact': {
-		title: 'Ein Gespräch beginnen',
-		description:
-			'Kontaktiere Hand In Hand, um über vertrauliche Unterstützung, Begleitung oder eine Partnerschaft mit deiner Gemeinde zu sprechen.'
-	},
 	'/submission-success': {
 		title: 'Nachricht erhalten',
 		description:
 			'Danke. Hand In Hand hat deine Einsendung erhalten und wird sich sorgfältig bei dir melden.'
 	},
-	'/zoom-schedule': {
-		title: 'Zoom-Termine',
-		description:
-			'Nimm zweimal im Monat an den Zoom-Treffen von Hand In Hand Ministry teil: Zeugnisse, Fragen und Antworten, und Gemeinschaft.'
-	},
+
 	'/login': {
 		title: 'Anmelden',
 		description: 'Melde dich im privaten Hand-In-Hand-Administrationsbereich an.'

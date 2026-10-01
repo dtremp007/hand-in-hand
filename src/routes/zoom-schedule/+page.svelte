@@ -1,5 +1,3 @@
 <script lang="ts">
-	import ZoomSchedulePage from '$lib/pages/ZoomSchedulePage.svelte';
+	// Redirect handled in +page.server.ts
 </script>
-
-<ZoomSchedulePage />

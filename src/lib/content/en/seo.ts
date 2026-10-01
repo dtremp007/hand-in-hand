@@ -16,25 +16,11 @@ export const seo: SeoContent = {
 		description:
 			'Whether you are seeking freedom or ready to walk with someone else, take the first step toward confidential, faith-rooted support.'
 	},
-	'/churches': {
-		title: 'Support for Churches',
-		description:
-			'Hand In Hand works alongside churches to provide focused, confidential, one-to-one support without replacing church leadership.'
-	},
-	'/contact': {
-		title: 'Start a Conversation',
-		description:
-			'Contact Hand In Hand to discuss confidential support, walking alongside someone, or partnering with your church.'
-	},
 	'/submission-success': {
 		title: 'Message Received',
 		description: 'Thank you. Hand In Hand received your submission and will follow up with care.'
 	},
-	'/zoom-schedule': {
-		title: 'Zoom Schedule',
-		description:
-			'Join Hand In Hand Ministry Zoom meetings twice each month for testimonies, Q&A, and fellowship.'
-	},
+
 	'/login': {
 		title: 'Login',
 		description: 'Sign in to the private Hand In Hand admin area.'

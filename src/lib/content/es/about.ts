@@ -41,6 +41,6 @@ export const about: AboutContent = {
 		]
 	},
 	cta: {
-		button: 'Cont\u00e1ctanos'
+		button: 'Invol\u00facrate'
 	}
 };
