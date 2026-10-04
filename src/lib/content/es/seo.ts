@@ -11,6 +11,11 @@ export const seo: SeoContent = {
 		description:
 			'Conoce cómo Hand In Hand camina junto a las personas a través de relaciones firmes, presencia honesta y cuidado confidencial basado en la fe.'
 	},
+	'/how-it-works': {
+		title: 'Cómo funciona',
+		description:
+			'Un trípode es un grupo privado de WhatsApp con dos aspirantes y un vencedor. Conoce el compromiso de cada papel y cómo camina el trípode unido.'
+	},
 	'/get-involved': {
 		title: 'Involúcrate',
 		description:

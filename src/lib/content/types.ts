@@ -59,6 +59,26 @@ export type GetInvolvedContent = {
 	};
 };
 
+export type HowItWorksContent = {
+	label: string;
+	title: string;
+	subtitle: string;
+	intro: string;
+	image: { src: string; width: number; height: number; alt: string; caption: string };
+	rhythm: { when: string; what: string }[];
+	roles: { name: string; count: string; summary: string; duties: string[] }[];
+	questions: { label: string; title: string; items: string[] };
+	ambassador: {
+		label: string;
+		name: string;
+		count: string;
+		summary: string;
+		duties: string[];
+	};
+	confidentiality: string;
+	cta: { title: string; body: string; button: string };
+};
+
 export type SubmissionSuccessContent = {
 	title: string;
 	body: string;
@@ -83,6 +103,7 @@ export type SiteContent = {
 	home: HomeContent;
 	about: AboutContent;
 	getInvolved: GetInvolvedContent;
+	howItWorks: HowItWorksContent;
 	submissionSuccess: SubmissionSuccessContent;
 	processSteps: ProcessStepsContent;
 	seo: SeoContent;

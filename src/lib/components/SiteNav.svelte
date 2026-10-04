@@ -11,6 +11,11 @@
 	const links = $derived([
 		{ href: localizeHref('/') as Pathname, label: m.nav_home(), key: 'home' },
 		{
+			href: localizeHref('/how-it-works') as Pathname,
+			label: m.nav_how_it_works(),
+			key: 'how-it-works'
+		},
+		{
 			href: localizeHref('/get-involved') as Pathname,
 			label: m.nav_get_involved(),
 			key: 'get-involved'

@@ -11,6 +11,11 @@ export const seo: SeoContent = {
 		description:
 			'Erfahre, wie Hand In Hand Menschen durch beständige Beziehungen, ehrliche Gegenwart und vertrauliche, im Glauben verwurzelte Fürsorge begleitet.'
 	},
+	'/how-it-works': {
+		title: 'So funktioniert es',
+		description:
+			'Ein Dreibein ist eine private WhatsApp-Gruppe aus zwei Suchenden und einem Sieger. Erfahre, wozu sich jede Rolle verpflichtet und wie das Dreibein gemeinsam geht.'
+	},
 	'/get-involved': {
 		title: 'Mitmachen',
 		description:

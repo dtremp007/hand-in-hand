@@ -11,6 +11,11 @@ export const seo: SeoContent = {
 		description:
 			'Learn how Hand In Hand walks alongside people through steady relationships, honest presence, and confidential faith-rooted care.'
 	},
+	'/how-it-works': {
+		title: 'How It Works',
+		description:
+			'A tripod is a private WhatsApp group of two Seekers and one Victor. Learn what each role commits to and how the tripod walks together.'
+	},
 	'/get-involved': {
 		title: 'Get Involved',
 		description:

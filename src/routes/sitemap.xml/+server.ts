@@ -1,7 +1,7 @@
 import type { RequestHandler } from './$types';
 import { locales } from '$lib/paraglide/runtime';
 
-const canonicalRoutes = ['/', '/about', '/get-involved'];
+const canonicalRoutes = ['/', '/how-it-works', '/about', '/get-involved'];
 
 export const GET: RequestHandler = ({ url }) => {
 	const urls = locales
