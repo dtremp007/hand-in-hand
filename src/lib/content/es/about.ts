@@ -37,7 +37,9 @@ export const about: AboutContent = {
 			'Steinreich Bibleschule: el lugar donde comenz\u00f3 este ministerio. Les agradecemos sinceramente por habernos dado la oportunidad de iniciar este ministerio entre sus estudiantes, \u00a1con la esperanza de dejar un impacto duradero!',
 			'Henry Reimer - Investigador y visionario',
 			'Justin Loewen - Camar\u00f3grafo y encargado de medios',
-			'Brennan Plett - T\u00e9cnico, Visionario y Creador'
+			'Brennan Plett - T\u00e9cnico, Visionario y Creador',
+			'David Rempel - Desarrollador web',
+			'Anthony Wiebe - Traductor'
 		]
 	},
 	cta: {
