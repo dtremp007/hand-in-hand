@@ -71,7 +71,7 @@
 				</p>
 			</div>
 			<div
-				class="message-frame flex min-h-[22rem] items-center justify-center border border-[#2d2b27] bg-surface p-8 md:min-h-[30rem]"
+				class="message-frame flex min-h-[22rem] items-center justify-center border border-[#2d2b27] bg-surface p-3 md:min-h-[30rem] md:p-8"
 			>
 				<iframe
 					class="aspect-video h-full w-full max-w-2xl"
@@ -132,6 +132,7 @@
 		<SectionFrame class="bg-surface-low" spacing="py-16" innerClass="max-w-4xl">
 			<p class="text-sm text-muted">
 				<strong>{content.references.label}</strong>
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 				<a class="text-gold underline" href={content.references.url} target="_blank" rel="noopener">
 					{content.references.url}
 				</a>

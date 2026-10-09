@@ -37,7 +37,9 @@ export const about: AboutContent = {
 			'Steinreich Bibleschule: der Ort, an dem dieser Dienst seinen Anfang nahm. Wir danken ihnen von ganzem Herzen dafür, dass sie uns die Möglichkeit gegeben haben, diesen Dienst unter ihren Schülern zu beginnen, in der Hoffnung, einen bleibenden Eindruck zu hinterlassen.',
 			'Henry Reimer: Recherche und Visionär',
 			'Justin Loewen: Videograf und Medien',
-			'Brennan Plett: Technik, Visionär und Mitbegründer'
+			'Brennan Plett: Technik, Visionär und Mitbegründer',
+			'David Rempel: Webentwickler',
+			'Anthony Wiebe: Übersetzer'
 		]
 	},
 	cta: {
