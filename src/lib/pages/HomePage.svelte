@@ -4,6 +4,7 @@
 	import PageShell from '$lib/components/PageShell.svelte';
 	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
 	import SectionFrame from '$lib/components/SectionFrame.svelte';
+	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import { getContent, type Locale } from '$lib/content';
 	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
@@ -57,30 +58,29 @@
 			</div>
 		</SectionFrame>
 
-		<SectionFrame
-			class="border-y border-[#2b2925] bg-ink"
-			spacing="py-24 md:py-36"
-			innerClass="grid items-center gap-16 md:grid-cols-[0.72fr_1.28fr]"
-		>
-			<div class="max-w-xl">
+		<SectionFrame class="border-y border-[#2b2925] bg-ink" spacing="py-24 md:py-36">
+			<div class="grid gap-10 md:grid-cols-[0.72fr_1.28fr] md:items-end md:gap-16">
 				<h2 class="font-serif text-5xl leading-[0.96] text-paper md:text-6xl">
 					{content.testimony.title}
 				</h2>
-				<p class="mt-10 text-xl leading-relaxed text-muted md:text-2xl">
+				<p class="max-w-2xl text-xl leading-relaxed text-muted md:text-2xl">
 					{content.testimony.description}
 				</p>
 			</div>
-			<div
-				class="message-frame flex min-h-[22rem] items-center justify-center border border-[#2d2b27] bg-surface p-3 md:min-h-[30rem] md:p-8"
-			>
-				<iframe
-					class="aspect-video h-full w-full max-w-2xl"
-					src="https://www.youtube.com/embed/d3D0xrlzUQU"
-					title={content.testimony.title}
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen
-				></iframe>
-			</div>
+			<ul class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				{#each content.testimony.videos as video (video.id)}
+					<li>
+						<figure class="message-frame border border-[#2d2b27] bg-surface p-3">
+							<VideoEmbed id={video.id} title={video.title} />
+							<figcaption
+								class="px-1 pt-4 pb-1 text-xs font-extrabold uppercase tracking-[0.22em] text-outline"
+							>
+								{video.title}
+							</figcaption>
+						</figure>
+					</li>
+				{/each}
+			</ul>
 		</SectionFrame>
 
 		<SectionFrame

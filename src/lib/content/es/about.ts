@@ -27,7 +27,8 @@ export const about: AboutContent = {
 	bob: {
 		name: 'Bob Fife',
 		role: 'Fundador',
-		bio: 'Dios me ha revelado claramente la necesidad de este ministerio. Una cosa es tener una lucha y otra muy distinta es saber c\u00f3mo enfrentarse a ella. El enfoque es importante. S\u00e9 lo que funciona. \u00abDe la mano con Dios\u00bb es la \u00fanica soluci\u00f3n duradera. Una vez que se ha obtenido la verdadera victoria, es importante tender la mano y ayudar a quien est\u00e1 pasando por dificultades. \u00abDeber\u00edamos ayudar a otros a hacer lo que es correcto y edificarlos en el Se\u00f1or\u00bb (Romanos 15:2). Mi oraci\u00f3n es que las iglesias de todo el mundo utilicen este incre\u00edble ministerio para ayudar a otros y dar gloria a Dios. \u00a1Gracias de antemano!'
+		bio: 'Dios me ha revelado claramente la necesidad de este ministerio. Una cosa es tener una lucha y otra muy distinta es saber c\u00f3mo enfrentarse a ella. El enfoque es importante. S\u00e9 lo que funciona. \u00abDe la mano con Dios\u00bb es la \u00fanica soluci\u00f3n duradera. Una vez que se ha obtenido la verdadera victoria, es importante tender la mano y ayudar a quien est\u00e1 pasando por dificultades. \u00abDeber\u00edamos ayudar a otros a hacer lo que es correcto y edificarlos en el Se\u00f1or\u00bb (Romanos 15:2). Mi oraci\u00f3n es que las iglesias de todo el mundo utilicen este incre\u00edble ministerio para ayudar a otros y dar gloria a Dios. \u00a1Gracias de antemano!',
+		video: { id: '2JpSASX-548', title: 'Bob Fife presenta Hand In Hand Ministry' }
 	},
 	acknowledgements: {
 		title: 'AGRADECIMIENTOS',

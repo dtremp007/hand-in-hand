@@ -28,7 +28,12 @@ export const home: HomeContent = {
 	testimony: {
 		title: 'Una historia real de transformaci\u00f3n',
 		description:
-			'El testimonio personal de alguien que decidi\u00f3 dar el primer pasoAs\u00ed es como puede ser cuando alguien ya no tiene que recorrer ese camino solo.'
+			'Testimonios personales de hombres que decidieron dar el primer paso. As\u00ed es como puede ser cuando alguien ya no tiene que recorrer ese camino solo.',
+		videos: [
+			{ id: 'd3D0xrlzUQU', title: 'Brennan Plett' },
+			{ id: 'evyW6_JbWeY', title: 'Henry Reimer' },
+			{ id: 'IlEU1ffbhD8', title: 'David Guenter' }
+		]
 	},
 	statistics:
 		'Seg\u00fan los informes, el 61 % de la poblaci\u00f3n general ve pornograf\u00eda. Concretamente, el 73 % de los adolescentes la consume con regularidad. \u00bfCu\u00e1l es el mayor problema? Que no estamos abordando la cuesti\u00f3n. Seg\u00fan los datos, solo el 7 % de los pastores afirma que su iglesia cuenta con un ministerio dedicado a esta lucha. La industria de la pornograf\u00eda est\u00e1 creciendo y desarroll\u00e1ndose r\u00e1pidamente. \u00bfEstamos preparados para ello? Se espera que la industria de la pornograf\u00eda en realidad virtual supere los mil millones de d\u00f3lares en 2026. Con estos avances, la pornograf\u00eda se vuelve m\u00e1s peligrosa y adictiva que nunca. La industria de la pornograf\u00eda tiene actualmente un valor de 100 mil millones de d\u00f3lares.',

@@ -28,7 +28,12 @@ export const home: HomeContent = {
 	testimony: {
 		title: 'A Real Story of Change',
 		description:
-			'A personal testimony from someone who chose to take the first step.This is what it can look like when someone is no longer walking through it alone.'
+			'Personal testimonies from men who chose to take the first step. This is what it can look like when someone is no longer walking through it alone.',
+		videos: [
+			{ id: 'd3D0xrlzUQU', title: 'Brennan Plett' },
+			{ id: 'evyW6_JbWeY', title: 'Henry Reimer' },
+			{ id: 'IlEU1ffbhD8', title: 'David Guenter' }
+		]
 	},
 	statistics:
 		'Pornography is reportedly viewed by 61% of the general population. 73% of teenagers, specifically, consume porn regularly. The biggest problem? We aren\u2019t facing the issue. Reportedly, 7% of pastors say their churches have a ministry regarding this struggle. The porn industry is rapidly growing and developing, and are we ready for it? The VR Pornography industry is expected to exceed $1 Billion in 2026. With these developments, porn inevitably becomes more dangerous than ever, presumably becoming more addicting than ever before. The porn industry is currently a $100 Billion industry.',

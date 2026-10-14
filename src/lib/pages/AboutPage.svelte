@@ -3,6 +3,7 @@
 	import GoldButton from '$lib/components/GoldButton.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
 	import SquareList from '$lib/components/SquareList.svelte';
+	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import { getContent, type Locale } from '$lib/content';
 	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
@@ -64,6 +65,9 @@
 				<p class="mt-2 text-sm uppercase tracking-[0.24em] text-gold">{content.bob.role}</p>
 				<p class="mt-5 max-w-2xl text-xl leading-relaxed text-muted">{content.bob.bio}</p>
 			</div>
+			<div class="message-frame max-w-3xl border border-[#2d2b27] p-3 md:col-start-2 md:p-4">
+				<VideoEmbed id={content.bob.video.id} title={content.bob.video.title} />
+			</div>
 		</section>
 
 		<section class="mb-24">
@@ -79,7 +83,9 @@
 
 		<section class="text-center">
 			<div class="mt-10">
-				<GoldButton href={localizeHref('/get-involved') as Pathname}>{content.cta.button}</GoldButton>
+				<GoldButton href={localizeHref('/get-involved') as Pathname}
+					>{content.cta.button}</GoldButton
+				>
 			</div>
 		</section>
 	</main>

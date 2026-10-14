@@ -1,10 +1,13 @@
 export type Locale = 'en' | 'es' | 'de';
 
+/** A YouTube video, identified by the ID in its youtu.be link. */
+export type VideoContent = { id: string; title: string };
+
 export type HomeContent = {
 	hero: { title: string; subtitle: string; getHelp: string; learnMore: string };
 	foundation: { label: string; heading: string };
 	phases: { title: string; scripture: string; heading: string; body: string }[];
-	testimony: { title: string; description: string };
+	testimony: { title: string; description: string; videos: VideoContent[] };
 	statistics: string;
 	revelation: string;
 	romans: string;
@@ -22,7 +25,7 @@ export type AboutContent = {
 		diagram: { src: string; width: number; height: number; alt: string; caption: string };
 	};
 	whoWeAre: { title: string; intro: string; dedication: string };
-	bob: { name: string; role: string; bio: string };
+	bob: { name: string; role: string; bio: string; video: VideoContent };
 	acknowledgements: { title: string; intro: string; items: string[] };
 	cta: { button: string };
 };

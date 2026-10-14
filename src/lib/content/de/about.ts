@@ -27,7 +27,8 @@ export const about: AboutContent = {
 	bob: {
 		name: 'Bob Fife',
 		role: 'Gründer',
-		bio: 'Gott hat mir deutlich offenbart, wie notwendig dieser Dienst ist. Es ist eine Sache, mit Schwierigkeiten zu kämpfen, aber eine ganz andere, zu wissen, wie man damit umgeht. Der Fokus ist entscheidend. Ich weiß, was funktioniert. Hand in Hand mit Gott ist die einzige dauerhafte Lösung. Sobald man einen echten Sieg errungen hat, ist es wichtig, auf andere zuzugehen und ihnen zu helfen. „Wir sollen anderen helfen, das Richtige zu tun, und sie im Herrn stärken“ (Römer 15,2). Ich bete dafür, dass Gemeinden auf der ganzen Welt diesen wunderbaren Dienst nutzen, um anderen zu helfen und Gott die Ehre zu erweisen. Vielen Dank im Voraus!'
+		bio: 'Gott hat mir deutlich offenbart, wie notwendig dieser Dienst ist. Es ist eine Sache, mit Schwierigkeiten zu kämpfen, aber eine ganz andere, zu wissen, wie man damit umgeht. Der Fokus ist entscheidend. Ich weiß, was funktioniert. Hand in Hand mit Gott ist die einzige dauerhafte Lösung. Sobald man einen echten Sieg errungen hat, ist es wichtig, auf andere zuzugehen und ihnen zu helfen. „Wir sollen anderen helfen, das Richtige zu tun, und sie im Herrn stärken“ (Römer 15,2). Ich bete dafür, dass Gemeinden auf der ganzen Welt diesen wunderbaren Dienst nutzen, um anderen zu helfen und Gott die Ehre zu erweisen. Vielen Dank im Voraus!',
+		video: { id: '2JpSASX-548', title: 'Bob Fife stellt Hand In Hand Ministry vor' }
 	},
 	acknowledgements: {
 		title: 'Anerkennungen',

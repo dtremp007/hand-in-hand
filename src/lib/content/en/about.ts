@@ -27,7 +27,8 @@ export const about: AboutContent = {
 	bob: {
 		name: 'Bob Fife',
 		role: 'Founder',
-		bio: 'God has clearly revealed to me about the need for this ministry. It\u2019s one thing to have a struggle, it\u2019s another thing to know how to deal with it. The focus is important. I know what works. Hand in Hand with God is the only lasting solution. Once one receives real victory it\u2019s important to reach out and help someone who struggles. \u2018We should help others do what is right and build them up in the Lord\u2019 (Romans 15:2). My prayer is that churches around the world will utilize this amazing Ministry to help others and bring glory to God. Thank you in advance!'
+		bio: 'God has clearly revealed to me about the need for this ministry. It\u2019s one thing to have a struggle, it\u2019s another thing to know how to deal with it. The focus is important. I know what works. Hand in Hand with God is the only lasting solution. Once one receives real victory it\u2019s important to reach out and help someone who struggles. \u2018We should help others do what is right and build them up in the Lord\u2019 (Romans 15:2). My prayer is that churches around the world will utilize this amazing Ministry to help others and bring glory to God. Thank you in advance!',
+		video: { id: '2JpSASX-548', title: 'Bob Fife introduces Hand In Hand Ministry' }
 	},
 	acknowledgements: {
 		title: 'ACKNOWLEDGEMENTS',

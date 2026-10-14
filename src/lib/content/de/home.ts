@@ -28,7 +28,12 @@ export const home: HomeContent = {
 	testimony: {
 		title: 'Eine wahre Geschichte der Veränderung',
 		description:
-			'Ein persönlicher Erfahrungsbericht von jemandem, der den ersten Schritt gewagt hat. So kann es aussehen, wenn jemand diesen Weg nicht mehr allein gehen muss.'
+			'Persönliche Erfahrungsberichte von Männern, die den ersten Schritt gewagt haben. So kann es aussehen, wenn jemand diesen Weg nicht mehr allein gehen muss.',
+		videos: [
+			{ id: 'd3D0xrlzUQU', title: 'Brennan Plett' },
+			{ id: 'evyW6_JbWeY', title: 'Henry Reimer' },
+			{ id: 'IlEU1ffbhD8', title: 'David Guenter' }
+		]
 	},
 	statistics:
 		'Berichten zufolge schauen sich 61 % der Gesamtbevölkerung Pornografie an. Insbesondere 73 % der Jugendlichen konsumieren regelmäßig Pornografie. Das größte Problem? Wir setzen uns nicht mit diesem Thema auseinander. Laut Berichten geben 7 % der Pastoren an, dass ihre Gemeinden ein Seelsorgeangebot für diesen Bereich haben. Die Pornoindustrie wächst und entwickelt sich rasant – sind wir darauf vorbereitet? Es wird erwartet, dass die VR-Pornoindustrie im Jahr 2026 die Marke von 1 Milliarde US-Dollar überschreiten wird. Angesichts dieser Entwicklungen wird Pornografie unweigerlich gefährlicher denn je und vermutlich auch suchterzeugender als je zuvor. Die Pornoindustrie ist derzeit eine 100-Milliarden-Dollar-Branche.',
